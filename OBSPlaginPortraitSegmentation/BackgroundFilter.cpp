@@ -564,7 +564,7 @@ bool BackgroundFilter::GlSetup(const int mask_channel) {
     CALL(unif_frame1_ = glGetUniformLocation(program_, "frame1"));
     CALL(unif_frame2_ = glGetUniformLocation(program_, "frame2"));
     CALL(unif_mask_ = glGetUniformLocation(program_, "mask"));
-    return true;
+    return true; 
 }
 
 bool BackgroundFilter::GlRender(const float mask_const) {
