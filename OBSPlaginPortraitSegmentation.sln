@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OBSPlaginPortraitSegmentation", "OBSPlaginPortraitSegmentation\OBSPlaginPortraitSegmentation.vcxproj", "{0CE466C6-6B29-4FD8-949E-7105002AF1B6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM64 = Debug|ARM64
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|ARM64 = Release|ARM64
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0CE466C6-6B29-4FD8-949E-7105002AF1B6}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{0CE466C6-6B29-4FD8-949E-7105002AF1B6}.Debug|ARM64.Build.0 = Debug|ARM64
+		{0CE466C6-6B29-4FD8-949E-7105002AF1B6}.Debug|x64.ActiveCfg = Debug|x64
+		{0CE466C6-6B29-4FD8-949E-7105002AF1B6}.Debug|x64.Build.0 = Debug|x64
+		{0CE466C6-6B29-4FD8-949E-7105002AF1B6}.Debug|x86.ActiveCfg = Debug|Win32
+		{0CE466C6-6B29-4FD8-949E-7105002AF1B6}.Debug|x86.Build.0 = Debug|Win32
+		{0CE466C6-6B29-4FD8-949E-7105002AF1B6}.Release|ARM64.ActiveCfg = Release|ARM64
+		{0CE466C6-6B29-4FD8-949E-7105002AF1B6}.Release|ARM64.Build.0 = Release|ARM64
+		{0CE466C6-6B29-4FD8-949E-7105002AF1B6}.Release|x64.ActiveCfg = Release|x64
+		{0CE466C6-6B29-4FD8-949E-7105002AF1B6}.Release|x64.Build.0 = Release|x64
+		{0CE466C6-6B29-4FD8-949E-7105002AF1B6}.Release|x86.ActiveCfg = Release|Win32
+		{0CE466C6-6B29-4FD8-949E-7105002AF1B6}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {87D0C54B-D444-4745-B4EA-3DB8F0FBC06B}
+	EndGlobalSection
+EndGlobal
