@@ -1,0 +1,2493 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'cv::MatStep::buf' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/opencv/build/include/opencv2/core/mat.inl.hpp"
+                },
+                "region": {
+                  "startLine": 1239,
+                  "startColumn": 10,
+                  "endLine": 1239,
+                  "endColumn": 10
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::MatStep::{ctor}",
+                  "decoratedName": "??0MatStep@cv@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "cv::MatStep::buf"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'cv::MatStep::buf' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/opencv/build/include/opencv2/core/mat.inl.hpp"
+                },
+                "region": {
+                  "startLine": 1245,
+                  "startColumn": 10,
+                  "endLine": 1245,
+                  "endColumn": 10
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::MatStep::{ctor}",
+                  "decoratedName": "??0MatStep@cv@@QEAA@_K@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "cv::MatStep::buf"
+          }
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/opencv/build/include/opencv2/core/mat.inl.hpp"
+                },
+                "region": {
+                  "startLine": 1874,
+                  "startColumn": 12,
+                  "endLine": 1874,
+                  "endColumn": 12
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::SparseMat::elemSize",
+                  "decoratedName": "?elemSize@SparseMat@cv@@QEBA_KXZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '+' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '+' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/opencv/build/include/opencv2/core/mat.inl.hpp"
+                },
+                "region": {
+                  "startLine": 1874,
+                  "startColumn": 12,
+                  "endLine": 1874,
+                  "endColumn": 12
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::SparseMat::elemSize",
+                  "decoratedName": "?elemSize@SparseMat@cv@@QEBA_KXZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/opencv/build/include/opencv2/core/utility.hpp"
+                },
+                "region": {
+                  "startLine": 568,
+                  "startColumn": 61,
+                  "endLine": 568,
+                  "endColumn": 61
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::getElemSize",
+                  "decoratedName": "?getElemSize@cv@@YA_KH@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '+' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '+' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/opencv/build/include/opencv2/core/utility.hpp"
+                },
+                "region": {
+                  "startLine": 568,
+                  "startColumn": 61,
+                  "endLine": 568,
+                  "endColumn": 61
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::getElemSize",
+                  "decoratedName": "?getElemSize@cv@@YA_KH@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '+' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '+' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/opencv/build/include/opencv2/imgproc.hpp"
+                },
+                "region": {
+                  "startLine": 4992,
+                  "startColumn": 16,
+                  "endLine": 4992,
+                  "endColumn": 40
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::LineIterator::++",
+                  "decoratedName": "??ELineIterator@cv@@QEAAAEAV01@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26439",
+          "message": {
+            "text": "This kind of function should not throw. Declare it 'noexcept' (f.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/opencv/build/include/opencv2/core/async.hpp"
+                },
+                "region": {
+                  "startLine": 73,
+                  "startColumn": 5,
+                  "endLine": 73,
+                  "endColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::AsyncArray::{ctor}",
+                  "decoratedName": "??0AsyncArray@cv@@QEAA@$$QEAV01@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'cvflann::UntypedMatrix::type' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/opencv/build/include/opencv2/flann/matrix.h"
+                },
+                "region": {
+                  "startLine": 95,
+                  "startColumn": 5,
+                  "endLine": 95,
+                  "endColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cvflann::UntypedMatrix::{ctor}",
+                  "decoratedName": "??0UntypedMatrix@cvflann@@QEAA@PEAXJJ@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "cvflann::UntypedMatrix::type"
+          }
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '+' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '+' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/opencv/build/include/opencv2/flann/dist.h"
+                },
+                "region": {
+                  "startLine": 85,
+                  "startColumn": 76,
+                  "endLine": 85,
+                  "endColumn": 80
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cvflann::round",
+                  "decoratedName": "??$round@_J@cvflann@@YA_JM@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/opencv/build/include/opencv2/flann/lsh_table.h"
+                },
+                "region": {
+                  "startLine": 363,
+                  "startColumn": 30,
+                  "endLine": 363,
+                  "endColumn": 45
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cvflann::lsh::LshTable<unsigned char>::{ctor}",
+                  "decoratedName": "??0?$LshTable@E@lsh@cvflann@@QEAA@II@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/opencv/build/include/opencv2/flann/lsh_table.h"
+                },
+                "region": {
+                  "startLine": 364,
+                  "startColumn": 28,
+                  "endLine": 364,
+                  "endColumn": 43
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cvflann::lsh::LshTable<unsigned char>::{ctor}",
+                  "decoratedName": "??0?$LshTable@E@lsh@cvflann@@QEAA@II@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'cvflann::lsh::LshStats::bucket_size_std_dev' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/opencv/build/include/opencv2/flann/lsh_table.h"
+                },
+                "region": {
+                  "startLine": 102,
+                  "startColumn": 1,
+                  "endLine": 102,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cvflann::lsh::LshStats::{ctor}",
+                  "decoratedName": "??0LshStats@lsh@cvflann@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "cvflann::lsh::LshStats::bucket_size_std_dev"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'cvflann::lsh::LshStats::bucket_size_mean_' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/opencv/build/include/opencv2/flann/lsh_table.h"
+                },
+                "region": {
+                  "startLine": 102,
+                  "startColumn": 1,
+                  "endLine": 102,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cvflann::lsh::LshStats::{ctor}",
+                  "decoratedName": "??0LshStats@lsh@cvflann@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "cvflann::lsh::LshStats::bucket_size_mean_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'cvflann::lsh::LshStats::bucket_size_min_' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/opencv/build/include/opencv2/flann/lsh_table.h"
+                },
+                "region": {
+                  "startLine": 102,
+                  "startColumn": 1,
+                  "endLine": 102,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cvflann::lsh::LshStats::{ctor}",
+                  "decoratedName": "??0LshStats@lsh@cvflann@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "cvflann::lsh::LshStats::bucket_size_min_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'cvflann::lsh::LshStats::bucket_size_max_' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/opencv/build/include/opencv2/flann/lsh_table.h"
+                },
+                "region": {
+                  "startLine": 102,
+                  "startColumn": 1,
+                  "endLine": 102,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cvflann::lsh::LshStats::{ctor}",
+                  "decoratedName": "??0LshStats@lsh@cvflann@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "cvflann::lsh::LshStats::bucket_size_max_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'cvflann::lsh::LshStats::bucket_size_median_' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/opencv/build/include/opencv2/flann/lsh_table.h"
+                },
+                "region": {
+                  "startLine": 102,
+                  "startColumn": 1,
+                  "endLine": 102,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cvflann::lsh::LshStats::{ctor}",
+                  "decoratedName": "??0LshStats@lsh@cvflann@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "cvflann::lsh::LshStats::bucket_size_median_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'cvflann::lsh::LshStats::n_buckets_' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/opencv/build/include/opencv2/flann/lsh_table.h"
+                },
+                "region": {
+                  "startLine": 102,
+                  "startColumn": 1,
+                  "endLine": 102,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cvflann::lsh::LshStats::{ctor}",
+                  "decoratedName": "??0LshStats@lsh@cvflann@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "cvflann::lsh::LshStats::n_buckets_"
+          }
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '+' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '+' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/opencv/build/include/opencv2/objdetect.hpp"
+                },
+                "region": {
+                  "startLine": 154,
+                  "startColumn": 37,
+                  "endLine": 154,
+                  "endColumn": 88
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::SimilarRects::()",
+                  "decoratedName": "??RSimilarRects@cv@@QEBA_NAEBV?$Rect_@H@1@0@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/opencv/build/include/opencv2/core/cuda.inl.hpp"
+                },
+                "region": {
+                  "startLine": 325,
+                  "startColumn": 12,
+                  "endLine": 325,
+                  "endColumn": 12
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::cuda::GpuMat::elemSize",
+                  "decoratedName": "?elemSize@GpuMat@cuda@cv@@QEBA_KXZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '+' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '+' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/opencv/build/include/opencv2/core/cuda.inl.hpp"
+                },
+                "region": {
+                  "startLine": 325,
+                  "startColumn": 12,
+                  "endLine": 325,
+                  "endColumn": 12
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::cuda::GpuMat::elemSize",
+                  "decoratedName": "?elemSize@GpuMat@cuda@cv@@QEBA_KXZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/opencv/build/include/opencv2/core/cuda.inl.hpp"
+                },
+                "region": {
+                  "startLine": 448,
+                  "startColumn": 12,
+                  "endLine": 448,
+                  "endColumn": 12
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::cuda::GpuMatND::elemSize",
+                  "decoratedName": "?elemSize@GpuMatND@cuda@cv@@QEBA_KXZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '+' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '+' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/opencv/build/include/opencv2/core/cuda.inl.hpp"
+                },
+                "region": {
+                  "startLine": 448,
+                  "startColumn": 12,
+                  "endLine": 448,
+                  "endColumn": 12
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::cuda::GpuMatND::elemSize",
+                  "decoratedName": "?elemSize@GpuMatND@cuda@cv@@QEBA_KXZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/opencv/build/include/opencv2/core/cuda.inl.hpp"
+                },
+                "region": {
+                  "startLine": 598,
+                  "startColumn": 12,
+                  "endLine": 598,
+                  "endColumn": 12
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::cuda::HostMem::elemSize",
+                  "decoratedName": "?elemSize@HostMem@cuda@cv@@QEBA_KXZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '+' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '+' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/opencv/build/include/opencv2/core/cuda.inl.hpp"
+                },
+                "region": {
+                  "startLine": 598,
+                  "startColumn": 12,
+                  "endLine": 598,
+                  "endColumn": 12
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::cuda::HostMem::elemSize",
+                  "decoratedName": "?elemSize@HostMem@cuda@cv@@QEBA_KXZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'cv::detail::RotationWarperBase<cv::detail::CompressedRectilinearProjector>::projector_' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/opencv/build/include/opencv2/stitching/detail/warpers.hpp"
+                },
+                "region": {
+                  "startLine": 188,
+                  "startColumn": 1,
+                  "endLine": 188,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::detail::RotationWarperBase<cv::detail::CompressedRectilinearProjector>::{ctor}",
+                  "decoratedName": "??0?$RotationWarperBase@UCompressedRectilinearProjector@detail@cv@@@detail@cv@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "cv::detail::RotationWarperBase<cv::detail::CompressedRectilinearProjector>::projector_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'cv::detail::RotationWarperBase<cv::detail::CompressedRectilinearPortraitProjector>::projector_' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/opencv/build/include/opencv2/stitching/detail/warpers.hpp"
+                },
+                "region": {
+                  "startLine": 188,
+                  "startColumn": 1,
+                  "endLine": 188,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::detail::RotationWarperBase<cv::detail::CompressedRectilinearPortraitProjector>::{ctor}",
+                  "decoratedName": "??0?$RotationWarperBase@UCompressedRectilinearPortraitProjector@detail@cv@@@detail@cv@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "cv::detail::RotationWarperBase<cv::detail::CompressedRectilinearPortraitProjector>::projector_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'cv::detail::RotationWarperBase<cv::detail::PaniniProjector>::projector_' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/opencv/build/include/opencv2/stitching/detail/warpers.hpp"
+                },
+                "region": {
+                  "startLine": 188,
+                  "startColumn": 1,
+                  "endLine": 188,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::detail::RotationWarperBase<cv::detail::PaniniProjector>::{ctor}",
+                  "decoratedName": "??0?$RotationWarperBase@UPaniniProjector@detail@cv@@@detail@cv@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "cv::detail::RotationWarperBase<cv::detail::PaniniProjector>::projector_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'cv::detail::RotationWarperBase<cv::detail::PaniniPortraitProjector>::projector_' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/opencv/build/include/opencv2/stitching/detail/warpers.hpp"
+                },
+                "region": {
+                  "startLine": 188,
+                  "startColumn": 1,
+                  "endLine": 188,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::detail::RotationWarperBase<cv::detail::PaniniPortraitProjector>::{ctor}",
+                  "decoratedName": "??0?$RotationWarperBase@UPaniniPortraitProjector@detail@cv@@@detail@cv@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "cv::detail::RotationWarperBase<cv::detail::PaniniPortraitProjector>::projector_"
+          }
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/leonid/source/repos/OBSPlaginPortraitSegmentation/OBSPlaginPortraitSegmentation/models/Model.h"
+                },
+                "region": {
+                  "startLine": 68,
+                  "startColumn": 78,
+                  "endLine": 68,
+                  "endColumn": 82
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "chw_to_hwc_32f",
+                  "decoratedName": "?chw_to_hwc_32f@@YAXAEBV_InputArray@cv@@AEBV_OutputArray@2@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'Model::name' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/leonid/source/repos/OBSPlaginPortraitSegmentation/OBSPlaginPortraitSegmentation/models/Model.h"
+                },
+                "region": {
+                  "startLine": 91,
+                  "startColumn": 3,
+                  "endLine": 91,
+                  "endColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Model::{ctor}",
+                  "decoratedName": "??0Model@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "Model::name"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'filter_data::isDisabled' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/leonid/source/repos/OBSPlaginPortraitSegmentation/OBSPlaginPortraitSegmentation/FilterData.h"
+                },
+                "region": {
+                  "startLine": 37,
+                  "startColumn": 1,
+                  "endLine": 37,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "filter_data::{ctor}",
+                  "decoratedName": "??0filter_data@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "filter_data::isDisabled"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'filter_data::numThreads' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/leonid/source/repos/OBSPlaginPortraitSegmentation/OBSPlaginPortraitSegmentation/FilterData.h"
+                },
+                "region": {
+                  "startLine": 37,
+                  "startColumn": 1,
+                  "endLine": 37,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "filter_data::{ctor}",
+                  "decoratedName": "??0filter_data@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "filter_data::numThreads"
+          }
+        },
+        {
+          "ruleId": "C26451",
+          "message": {
+            "text": "Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/leonid/source/repos/OBSPlaginPortraitSegmentation/OBSPlaginPortraitSegmentation/background-filter.cpp"
+                },
+                "region": {
+                  "startLine": 259,
+                  "startColumn": 35,
+                  "endLine": 259,
+                  "endColumn": 62
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "filter_video_tick",
+                  "decoratedName": "?filter_video_tick@@YAXPEAXM@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6269",
+          "message": {
+            "text": "Possibly incorrect order of operations."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/opencv/build/include/opencv2/flann/any.h"
+                },
+                "region": {
+                  "startLine": 97,
+                  "startColumn": 10,
+                  "endLine": 97,
+                  "endColumn": 33
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cvflann::anyimpl::big_any_policy<enum cvflann::flann_algorithm_t>::move",
+                  "decoratedName": "?move@?$big_any_policy@W4flann_algorithm_t@cvflann@@@anyimpl@cvflann@@UEAAXPEBQEAXPEAPEAX@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6269",
+          "message": {
+            "text": "Possibly incorrect order of operations."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/opencv/build/include/opencv2/flann/any.h"
+                },
+                "region": {
+                  "startLine": 97,
+                  "startColumn": 10,
+                  "endLine": 97,
+                  "endColumn": 33
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cvflann::anyimpl::big_any_policy<enum cvflann::flann_centers_init_t>::move",
+                  "decoratedName": "?move@?$big_any_policy@W4flann_centers_init_t@cvflann@@@anyimpl@cvflann@@UEAAXPEBQEAXPEAPEAX@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'cv::AutoBuffer<__int64,1>::buf' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/opencv/build/include/opencv2/core/utility.hpp"
+                },
+                "region": {
+                  "startLine": 971,
+                  "startColumn": 30,
+                  "endLine": 971,
+                  "endColumn": 30
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::AutoBuffer<__int64,1>::{ctor}",
+                  "decoratedName": "??0?$AutoBuffer@_J$00@cv@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "cv::AutoBuffer<__int64,1>::buf"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'cv::AutoBuffer<double,1>::buf' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/opencv/build/include/opencv2/core/utility.hpp"
+                },
+                "region": {
+                  "startLine": 971,
+                  "startColumn": 30,
+                  "endLine": 971,
+                  "endColumn": 30
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::AutoBuffer<double,1>::{ctor}",
+                  "decoratedName": "??0?$AutoBuffer@N$00@cv@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "cv::AutoBuffer<double,1>::buf"
+          }
+        },
+        {
+          "ruleId": "C6294",
+          "message": {
+            "text": "Ill-defined for-loop.  Loop body not executed."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/opencv/build/include/opencv2/core/matx.hpp"
+                },
+                "region": {
+                  "startLine": 578,
+                  "startColumn": 5,
+                  "endLine": 578,
+                  "endColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::Matx<float,3,1>::{ctor}",
+                  "decoratedName": "??0?$Matx@M$02$00@cv@@QEAA@MMM@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6201",
+          "message": {
+            "text": "Index '3' is out of valid index range '0' to '2' for possibly stack allocated buffer 'this->val'."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/opencv/build/include/opencv2/core/matx.hpp"
+                },
+                "region": {
+                  "startLine": 578,
+                  "startColumn": 39,
+                  "endLine": 578,
+                  "endColumn": 44
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::Matx<float,3,1>::{ctor}",
+                  "decoratedName": "??0?$Matx@M$02$00@cv@@QEAA@MMM@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6294",
+          "message": {
+            "text": "Ill-defined for-loop.  Loop body not executed."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/opencv/build/include/opencv2/core/matx.hpp"
+                },
+                "region": {
+                  "startLine": 578,
+                  "startColumn": 5,
+                  "endLine": 578,
+                  "endColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::Matx<double,3,1>::{ctor}",
+                  "decoratedName": "??0?$Matx@N$02$00@cv@@QEAA@NNN@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6201",
+          "message": {
+            "text": "Index '3' is out of valid index range '0' to '2' for possibly stack allocated buffer 'this->val'."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/opencv/build/include/opencv2/core/matx.hpp"
+                },
+                "region": {
+                  "startLine": 578,
+                  "startColumn": 39,
+                  "endLine": 578,
+                  "endColumn": 44
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::Matx<double,3,1>::{ctor}",
+                  "decoratedName": "??0?$Matx@N$02$00@cv@@QEAA@NNN@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6294",
+          "message": {
+            "text": "Ill-defined for-loop.  Loop body not executed."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/opencv/build/include/opencv2/core/matx.hpp"
+                },
+                "region": {
+                  "startLine": 570,
+                  "startColumn": 5,
+                  "endLine": 570,
+                  "endColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::Matx<float,2,1>::{ctor}",
+                  "decoratedName": "??0?$Matx@M$01$00@cv@@QEAA@MM@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6201",
+          "message": {
+            "text": "Index '2' is out of valid index range '0' to '1' for possibly stack allocated buffer 'this->val'."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/opencv/build/include/opencv2/core/matx.hpp"
+                },
+                "region": {
+                  "startLine": 570,
+                  "startColumn": 39,
+                  "endLine": 570,
+                  "endColumn": 44
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::Matx<float,2,1>::{ctor}",
+                  "decoratedName": "??0?$Matx@M$01$00@cv@@QEAA@MM@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6294",
+          "message": {
+            "text": "Ill-defined for-loop.  Loop body not executed."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/opencv/build/include/opencv2/core/matx.hpp"
+                },
+                "region": {
+                  "startLine": 570,
+                  "startColumn": 5,
+                  "endLine": 570,
+                  "endColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::Matx<double,2,1>::{ctor}",
+                  "decoratedName": "??0?$Matx@N$01$00@cv@@QEAA@NN@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6201",
+          "message": {
+            "text": "Index '2' is out of valid index range '0' to '1' for possibly stack allocated buffer 'this->val'."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/opencv/build/include/opencv2/core/matx.hpp"
+                },
+                "region": {
+                  "startLine": 570,
+                  "startColumn": 39,
+                  "endLine": 570,
+                  "endColumn": 44
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::Matx<double,2,1>::{ctor}",
+                  "decoratedName": "??0?$Matx@N$01$00@cv@@QEAA@NN@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6294",
+          "message": {
+            "text": "Ill-defined for-loop.  Loop body not executed."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/opencv/build/include/opencv2/core/matx.hpp"
+                },
+                "region": {
+                  "startLine": 586,
+                  "startColumn": 5,
+                  "endLine": 586,
+                  "endColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::Matx<float,4,1>::{ctor}",
+                  "decoratedName": "??0?$Matx@M$03$00@cv@@QEAA@MMMM@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6201",
+          "message": {
+            "text": "Index '4' is out of valid index range '0' to '3' for possibly stack allocated buffer 'this->val'."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/opencv/build/include/opencv2/core/matx.hpp"
+                },
+                "region": {
+                  "startLine": 586,
+                  "startColumn": 39,
+                  "endLine": 586,
+                  "endColumn": 44
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::Matx<float,4,1>::{ctor}",
+                  "decoratedName": "??0?$Matx@M$03$00@cv@@QEAA@MMMM@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6294",
+          "message": {
+            "text": "Ill-defined for-loop.  Loop body not executed."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/opencv/build/include/opencv2/core/matx.hpp"
+                },
+                "region": {
+                  "startLine": 586,
+                  "startColumn": 5,
+                  "endLine": 586,
+                  "endColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::Matx<double,4,1>::{ctor}",
+                  "decoratedName": "??0?$Matx@N$03$00@cv@@QEAA@NNNN@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6201",
+          "message": {
+            "text": "Index '4' is out of valid index range '0' to '3' for possibly stack allocated buffer 'this->val'."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/opencv/build/include/opencv2/core/matx.hpp"
+                },
+                "region": {
+                  "startLine": 586,
+                  "startColumn": 39,
+                  "endLine": 586,
+                  "endColumn": 44
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::Matx<double,4,1>::{ctor}",
+                  "decoratedName": "??0?$Matx@N$03$00@cv@@QEAA@NNNN@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.36.32537.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///C:/opencv/build/include/opencv2/core/mat.inl.hpp"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "68f9f3826e1997604597f7c1014225842673281a3eb54ae3b5bc5c1e66fe3cd1"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/opencv/build/include/opencv2/core/utility.hpp"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "db11607dfa0aaaaa6772f4ef3078f7854b68a964625f074c62e4f635feac418a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/opencv/build/include/opencv2/imgproc.hpp"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "186776ff4e021a2ebaabb14a4bf5b800808b4b766a78df209e2e9698f5f0ef68"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/opencv/build/include/opencv2/core/async.hpp"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "1cc836ba21eb6aa78cdca7e72a10d2e572988685cc3931a9a84b5011538bcdc3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/opencv/build/include/opencv2/flann/matrix.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "c5eb80ed32c9c6a71857f3117d8c77cafe72e65f9fb7abfd87ff440218dca1b1"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/opencv/build/include/opencv2/flann/dist.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "758db0ab4b975ab4232f1036eec922f24154faed1cf9f40719164ab8e252f2ca"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/opencv/build/include/opencv2/flann/lsh_table.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "29a044fd37935fb4b0bdd126c77d2aae2140f2bd06fd6673ec39047081caa293"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/opencv/build/include/opencv2/objdetect.hpp"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "1c8c62ffaac5de1923f1a32d5e96228cd37aae0ab9f92b06d236287e9712681e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/opencv/build/include/opencv2/core/cuda.inl.hpp"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "ff5e10a5acd03e71e6fad62f82c8564f8013d5b937b3db90e7fec3e47160a45e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/opencv/build/include/opencv2/stitching/detail/warpers.hpp"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "c1e4539ce7e6639ceb66d6f688b3e1bdee575c83ffe9680057433032ff16eb82"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/leonid/source/repos/OBSPlaginPortraitSegmentation/OBSPlaginPortraitSegmentation/models/Model.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "90ec8a6c722323cf226a512aab7d047632be02764d7a62c44087091977607ce3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/leonid/source/repos/OBSPlaginPortraitSegmentation/OBSPlaginPortraitSegmentation/FilterData.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "9d1afded385993667c96fe90baa37080dde7a1f639a4c8f8c7fc5a1a3e20e02b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/leonid/source/repos/OBSPlaginPortraitSegmentation/OBSPlaginPortraitSegmentation/background-filter.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "800ab2ea411ecef79c3b758cdd60c321225a3cea25057461a37916a85e36d46d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/opencv/build/include/opencv2/flann/any.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "28a7aa9a1f2524ffa91102c308b33550328406c97321959c2010e216a7f719a5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/opencv/build/include/opencv2/core/matx.hpp"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "8df934f0dc811d9056b522fc4540a5cfed3a2e20d9db50b088cfde94bb6f9701"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/onnxruntime/include/onnxruntime_cxx_api.h"
+          },
+          "hashes": {
+            "sha-256": "53f24dc36b937e052908874f7ca023a2d8a2f80f0f904c6b28c056e79049bd94"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/onnxruntime/include/onnxruntime_c_api.h"
+          },
+          "hashes": {
+            "sha-256": "1d74742f1efe2e756d8e791c1a60eb7601716d975b264fe1f8b992fe3df6547f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/onnxruntime/include/onnxruntime_cxx_inline.h"
+          },
+          "hashes": {
+            "sha-256": "34b37024fb55b3b465ab8f1dae345197286dbc7eaedd57d3cb25aadeb1086448"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/core.hpp"
+          },
+          "hashes": {
+            "sha-256": "50f12db35499b8300976b6b780e6c2b4b4bc6dcd51a26a177ce554876092cf81"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/core/cvdef.h"
+          },
+          "hashes": {
+            "sha-256": "0b22ae8db57448360633e99565a790f56631c5c03841e499d36819344f9b1f97"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/core/version.hpp"
+          },
+          "hashes": {
+            "sha-256": "7df33e83cd72c4c1a9ae90f5f4384c30260f98702595aaf7ba3c604c91615799"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/core/hal/interface.h"
+          },
+          "hashes": {
+            "sha-256": "d0d876a5d4c3082ad71541aa6b366ef4dd5efe2d7b9d109d517d6928e181b83e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/core/cv_cpu_dispatch.h"
+          },
+          "hashes": {
+            "sha-256": "e4eeec54b469b0a72540005ac05f5f9e0b34fe4b63090cf96e3623f16f84b943"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/core/base.hpp"
+          },
+          "hashes": {
+            "sha-256": "5a3c5081f4f83132da06064fea5d81e648d0b251eafc2d4016c83f7f59559867"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/opencv_modules.hpp"
+          },
+          "hashes": {
+            "sha-256": "f3a63585c90a75bd166460e03ff28ccff73f38a52b04eb8a6f72d02d3b971aa5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/core/cvstd.hpp"
+          },
+          "hashes": {
+            "sha-256": "9ba9df62de1fb7719cb81291dbd8448efa8c7d92a75b0c4873af5268beb64b1f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/core/cvstd_wrapper.hpp"
+          },
+          "hashes": {
+            "sha-256": "109f1e19060f7ec1e573953aa40f2592cfd00b6b96f7816cbb2f9b08d0b2c0ca"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/core/neon_utils.hpp"
+          },
+          "hashes": {
+            "sha-256": "ce0436e0cc3e236e317b03a9859ed31f10d56979391252c754f75dfbeaa4ebd4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/core/vsx_utils.hpp"
+          },
+          "hashes": {
+            "sha-256": "6a96833b8a4241bd28962bf3c300bddd7280936d3020d328de63cfd3228728f5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/core/check.hpp"
+          },
+          "hashes": {
+            "sha-256": "0cd7925226201e4652c2a10942d2c93b26dcb354e5c479fead547f3563d8523f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/core/traits.hpp"
+          },
+          "hashes": {
+            "sha-256": "2ee21d68861633bfa835d21e40bc381f63f3e05f3467bff8f4be2931436746ed"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/core/saturate.hpp"
+          },
+          "hashes": {
+            "sha-256": "80735771ea6ca685243457e0a6b6dc7224795c7568ff8715e35a394f59f8bbc8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/core/fast_math.hpp"
+          },
+          "hashes": {
+            "sha-256": "c30148ab88dbf453805eac4abdff19b02df4fc3ef10325f3bbcd97418f89a417"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/core/types.hpp"
+          },
+          "hashes": {
+            "sha-256": "96c0886cdebac21dd96c0922f72aa70a7da5a0951177b1b07066ef324e572ee6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/core/mat.hpp"
+          },
+          "hashes": {
+            "sha-256": "3db36ca62ebeb5fb08694b80c6f04b59c6ec2827dff6f4878cf9c904f49a9ad6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/core/bufferpool.hpp"
+          },
+          "hashes": {
+            "sha-256": "7b81257f13fcc5011f489b6cab29f0a8b4496ab6158b8cf5c254bbc5ea55ce7a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/core/persistence.hpp"
+          },
+          "hashes": {
+            "sha-256": "507496faf3d066a75f00de4acae180c51c1847aa3d2c2f94acb41bb25c1d6af0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/core/operations.hpp"
+          },
+          "hashes": {
+            "sha-256": "f0055c41fe9ab048f5c78fabefaebebe06f4f80808088f24e27b3f3677bc98df"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/core/cvstd.inl.hpp"
+          },
+          "hashes": {
+            "sha-256": "340a651e83315e23a5af89caf95affae0b5cf19691a25eef3cbb43e9d01a9753"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/core/optim.hpp"
+          },
+          "hashes": {
+            "sha-256": "83c2b6408c5d3fb87d65ff67b8750faa5207f4c3fab79938cc7a284a15a38dd9"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/core/ovx.hpp"
+          },
+          "hashes": {
+            "sha-256": "21a2d7b931f406636958ec299cdd076110e0bf51c5a09004bd2ccd84e9993e3a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/imgproc/segmentation.hpp"
+          },
+          "hashes": {
+            "sha-256": "45c324942f9b3e11450f12d7726b13a31eccea558e256ea26c19fbb74f1da67e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/opencv.hpp"
+          },
+          "hashes": {
+            "sha-256": "adc3825effefc6608c821165a461fa951df92a9926b53d7f230b23c634a52772"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/calib3d.hpp"
+          },
+          "hashes": {
+            "sha-256": "08f84db4588325c32167f8c7e411b300405c42fc178ff02ef4113e864fca66e0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/features2d.hpp"
+          },
+          "hashes": {
+            "sha-256": "090448f134cb27d759ebbfc1b380709e44d495f300463c5e4fa0379d13f00506"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/flann/miniflann.hpp"
+          },
+          "hashes": {
+            "sha-256": "0ff35124a033e0b7eed3ecfd6da5c5bd4c80763005cebcee3ec362e3df6bb99f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/flann/defines.h"
+          },
+          "hashes": {
+            "sha-256": "a4daedcace54e27be42873615744fd31cf3370226ead0551a3392865a07c5bfd"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/flann/config.h"
+          },
+          "hashes": {
+            "sha-256": "52af9f6013bcaea20aee701403f92c3ea110fe367689aae040a592e4b036239f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/core/affine.hpp"
+          },
+          "hashes": {
+            "sha-256": "e6fe5fda34a167a626d7bd3467d7776f1ea2c6dca38d7a1813b5259a9eb2ac04"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/dnn.hpp"
+          },
+          "hashes": {
+            "sha-256": "ad4405715b166097a3cc1f7e02f01385122667f8b99535d058d6e2d496e5b811"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/dnn/dnn.hpp"
+          },
+          "hashes": {
+            "sha-256": "779f697fe80451121fe52210f8fccb2adae8110f2779c8ca9cce4eef846f8f7c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/dnn/version.hpp"
+          },
+          "hashes": {
+            "sha-256": "eef0d3f970b0665f198c96c4d266a0a400c539c587aacdbba68ec222dee67721"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/dnn/dict.hpp"
+          },
+          "hashes": {
+            "sha-256": "4e603791a3726ef8d0c03417f6b6bd6c738ddea07a702f56a5eb41c4599c5f99"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/dnn/layer.hpp"
+          },
+          "hashes": {
+            "sha-256": "50af1804e1081df065ee1dd15d919b4f834669a0b1ffe1ab3e8c87e3864a22cb"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/dnn/dnn.inl.hpp"
+          },
+          "hashes": {
+            "sha-256": "3f79e598c9b9232e239a431b8314b5694a30194ce0a586f1267edfc4fbfdb4cb"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/dnn/utils/inference_engine.hpp"
+          },
+          "hashes": {
+            "sha-256": "7fc4c4443d76cec304183023a0c2a1b062af09a19fce7a794f7fd71c9fa976d3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/flann.hpp"
+          },
+          "hashes": {
+            "sha-256": "bdd89ab88f2f446a88d99232d9140d56bc86e199fc71aadf91fd9b24ad69bd6e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/flann/flann_base.hpp"
+          },
+          "hashes": {
+            "sha-256": "c5d6cb3b2fd5a0fb97cc92b8f8d0ec3cc55c6ef88b50047f690d63a0d8d2976e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/flann/general.h"
+          },
+          "hashes": {
+            "sha-256": "00fc370a0f630407c2b9c1b07580fefb74ebae969c444c45a861b8ed679b6fec"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/flann/params.h"
+          },
+          "hashes": {
+            "sha-256": "0c340401e892070117cd9f3cade6fbad3ecaae4d65ddd648f80ef74675095f17"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/flann/saving.h"
+          },
+          "hashes": {
+            "sha-256": "9fb1b9228363fb623ba0e232569718aa1939505fd2a17d7f12d9ec027b7ce86e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/flann/nn_index.h"
+          },
+          "hashes": {
+            "sha-256": "193ef9071c833c8d5730b876b81303d33d8edc82cacfca9bdfcc62afa58226ff"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/flann/result_set.h"
+          },
+          "hashes": {
+            "sha-256": "3e0a57964d887aca8f8fee4800f06ffb8bb489a020addeabbb93c9e31817fa78"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/flann/all_indices.h"
+          },
+          "hashes": {
+            "sha-256": "e7a947e4486bf58aa6f49892e195138de012f6085067ae36b774513eb378678b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/flann/kdtree_index.h"
+          },
+          "hashes": {
+            "sha-256": "4c7e29d73029c1a57399578634b18f82fe259e5204e35b13e9a7eec6abb6e5b6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/flann/dynamic_bitset.h"
+          },
+          "hashes": {
+            "sha-256": "350981a536e64459fc3c326379aa471c094f85cdeee1bd0086f23a8a4964efe4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/flann/heap.h"
+          },
+          "hashes": {
+            "sha-256": "c8bb22862f0305623fa2f32be07f245c2ff474ae0f99884f59c4dd7413283801"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/flann/allocator.h"
+          },
+          "hashes": {
+            "sha-256": "ef8b70d22ee5013c06ddf3dfd1865a45f6e92ab9abe5e3b54b9341bcac5a3490"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/flann/random.h"
+          },
+          "hashes": {
+            "sha-256": "ccaeac3d38e17b89628772040cc975671c407d4fec596269f326fbc20251e472"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/flann/kdtree_single_index.h"
+          },
+          "hashes": {
+            "sha-256": "ec3c1d981fbd104c0c8cf1dee7651fe3c6ae77e994dbb555af1aeaabc8f7382b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/flann/kmeans_index.h"
+          },
+          "hashes": {
+            "sha-256": "091564dd125c3ecec2021873cc1c59f46f917d9118ce0a07c38949d88ca64769"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/flann/logger.h"
+          },
+          "hashes": {
+            "sha-256": "02c70959eb29c7bb2ce549d237bda7f28c7f1422c828047e8725758becbb9ba5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/flann/composite_index.h"
+          },
+          "hashes": {
+            "sha-256": "b37e735348552c91560eeaedf2c80830aef3e6019a95da3b310f9b1a91cc63e4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/flann/linear_index.h"
+          },
+          "hashes": {
+            "sha-256": "967c6d5e598a01cd8755204308f69bf99e1538bcaa69926c40541fd183743385"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/flann/hierarchical_clustering_index.h"
+          },
+          "hashes": {
+            "sha-256": "6361f994904ba7bcabd0e5fdca7aafb9aa17b0fe4734b35873a3453cd5cb3fae"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/flann/lsh_index.h"
+          },
+          "hashes": {
+            "sha-256": "b38aecdf2fa9f02447e5f539e8a0144e243acf813e22194a2f3cfd6ab19176e8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/flann/autotuned_index.h"
+          },
+          "hashes": {
+            "sha-256": "26ddef777d584e2ad44feaba1c976687bba1a6bf38f2ba97c07773cf795112bb"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/flann/ground_truth.h"
+          },
+          "hashes": {
+            "sha-256": "6ff4c48ce1a8e03abe873b137f40fff3460efd11cbdf6d030258bfa199fea38a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/flann/index_testing.h"
+          },
+          "hashes": {
+            "sha-256": "de7a4a44d90dc7e6abe0f2db286c72f6ca926cb38e3cf7db392656c03c404fb9"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/flann/timer.h"
+          },
+          "hashes": {
+            "sha-256": "cdbf403037e062472679d29ac43a036190c89b633bb37e1086275b5db0378b55"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/flann/sampling.h"
+          },
+          "hashes": {
+            "sha-256": "8ad64010c5102963d34b60407f92b32b52869c6a73419eceed9d31454e30813c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/highgui.hpp"
+          },
+          "hashes": {
+            "sha-256": "f5f206fd1e12ae317200763e373f260bc98ef149a965153d5d087f9fd18c8b8c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/imgcodecs.hpp"
+          },
+          "hashes": {
+            "sha-256": "732260bbfb1d31ae72720eb4009aea26ba93ccb3c15230ce4e6c8333429a7f59"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/videoio.hpp"
+          },
+          "hashes": {
+            "sha-256": "2b78067376e04c9cee76958b5bb9a85d359f54a12b32e02d8a1194da7cafa144"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/ml.hpp"
+          },
+          "hashes": {
+            "sha-256": "bf5db9b06c96a734b6f32eff8084cfa8c514c25eab9f62f064401c8f421284b0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/ml/ml.inl.hpp"
+          },
+          "hashes": {
+            "sha-256": "ea7d089ae2aabda2a1f4b496af1b6582fab64951caeb574941c56cb58ddd3045"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/objdetect/aruco_detector.hpp"
+          },
+          "hashes": {
+            "sha-256": "f46fd4abb022ccf64d5e24436ff1e636dd1c744f3fbf892f99f2b43297a31d52"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/objdetect/aruco_dictionary.hpp"
+          },
+          "hashes": {
+            "sha-256": "251a6c5684b56b6097ea4e3915553373c32a80b5e2554d6dc9bd3af2c752f559"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/objdetect/aruco_board.hpp"
+          },
+          "hashes": {
+            "sha-256": "3ba1076c9804d31cb87ae8c15560eba699dcd62291a83bd9405780a12c53afa9"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/objdetect/graphical_code_detector.hpp"
+          },
+          "hashes": {
+            "sha-256": "495a831ec7e73c99dbb5ba43addbc998cfb2aac1d18f884b1c8ad001b3746b61"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/objdetect/detection_based_tracker.hpp"
+          },
+          "hashes": {
+            "sha-256": "0bdbca97eae5518536e5e538933ff090a6c6366fc83ae66a8d61aae7ca44d9f7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/objdetect/face.hpp"
+          },
+          "hashes": {
+            "sha-256": "ad2f42da908b1f167b5262911afdce3cb96deec28151b999c250a12426aa3957"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/objdetect/charuco_detector.hpp"
+          },
+          "hashes": {
+            "sha-256": "3b76572fe47883fe50fda5ec6f4dd14521bf0eb6189850ac1eaabd556e0ffd8e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/objdetect/barcode.hpp"
+          },
+          "hashes": {
+            "sha-256": "edbceaef6c7586919c1fca804689351ba147f3e826ee1c52ac41d53aaac5711e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/photo.hpp"
+          },
+          "hashes": {
+            "sha-256": "59571a555cd7e10a076d2f7388d9552d7c4a331e99f9aaf6c81cc669ad60d902"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/stitching.hpp"
+          },
+          "hashes": {
+            "sha-256": "357f279a467dff65b37de1540987973e7ceba0de74beeecd16a79ee03a0c7037"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/stitching/warpers.hpp"
+          },
+          "hashes": {
+            "sha-256": "8862f244a5fbd9eff01289596a5f50fed568f1a9866de8218f105feafa46c325"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/core/cuda.hpp"
+          },
+          "hashes": {
+            "sha-256": "faf623e2acb87cdf5ed22f35c8510ed498b77bb7c0ceefd993ac847532946b9d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/core/cuda_types.hpp"
+          },
+          "hashes": {
+            "sha-256": "623ac1f5dd2d05d9ed871a8f4ab991aaf0fed660caee1ca240a1de952a316b21"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/stitching/detail/warpers_inl.hpp"
+          },
+          "hashes": {
+            "sha-256": "f2de72510a47d108e73ed48a98895e479fd5f5d0eeaabf79be12243c83c4eecc"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/stitching/detail/matchers.hpp"
+          },
+          "hashes": {
+            "sha-256": "8d5d5230c8222c2885e99a582165316fa1c0ebf3195709f702d93f4493f6bedc"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/stitching/detail/motion_estimators.hpp"
+          },
+          "hashes": {
+            "sha-256": "da1abd85093372138ec925882386cc83410d3b2257ef9380b3184c68228a021b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/stitching/detail/util.hpp"
+          },
+          "hashes": {
+            "sha-256": "15f9f633e75ce11313cc093ac8bb6a54a8947ab97a583ec30a15cec2cf1ec92f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/stitching/detail/util_inl.hpp"
+          },
+          "hashes": {
+            "sha-256": "21cf60af2d2f82a19c11500091c4ae687826cf067b3ff9ead55d52a473e91e0c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/stitching/detail/camera.hpp"
+          },
+          "hashes": {
+            "sha-256": "1d9b1194b3b220d44350c586ecfa729263dcfba39488cb66feacfcd9930c28c1"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/stitching/detail/exposure_compensate.hpp"
+          },
+          "hashes": {
+            "sha-256": "92474066f75f3ded0b3b66278b957bbc8b51b867dfff48a8dc87e0d8aadc7d44"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/stitching/detail/seam_finders.hpp"
+          },
+          "hashes": {
+            "sha-256": "c544f7968b622da449db8805e223390b20a3cfd37732134ee7a2a7715b35840c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/stitching/detail/blenders.hpp"
+          },
+          "hashes": {
+            "sha-256": "1dfe06d9bd062cdc201bf093529646c601fb4a06a4bd8f2c9baa2c0452f61ae6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/video.hpp"
+          },
+          "hashes": {
+            "sha-256": "ce06cfd143c5bba6bb726fcf66fe7e84b9f346969672591931e339eeb6abf3b0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/video/tracking.hpp"
+          },
+          "hashes": {
+            "sha-256": "6f287dcdfa54c9a1ca5ce7f7d1e81c50bbb09c050d7874dc6ba753e791d0fdb2"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/opencv/build/include/opencv2/video/background_segm.hpp"
+          },
+          "hashes": {
+            "sha-256": "4af475628220405a71b408044eae248eee64ef13422fcb48e4e5e9713237ada5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/leonid/source/repos/obsplaginportraitsegmentation/obsplaginportraitsegmentation/models/modelsinet.h"
+          },
+          "hashes": {
+            "sha-256": "165c42a1e142b70b29a83a40e1dcb603fa6f43476a8d59e695774f3108751f58"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/leonid/source/repos/obsplaginportraitsegmentation/obsplaginportraitsegmentation/models/modelmediapipe.h"
+          },
+          "hashes": {
+            "sha-256": "66b733928adbba98a7ee189e2476666205ac15c00407a7938efb1a34e4d0283d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/leonid/source/repos/obsplaginportraitsegmentation/obsplaginportraitsegmentation/models/modelselfie.h"
+          },
+          "hashes": {
+            "sha-256": "1dcd1b0afcecabdfac1278c1a3cf470b59b0ac92cb98932ad40af523a82e0909"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/leonid/source/repos/obsplaginportraitsegmentation/obsplaginportraitsegmentation/models/modelrvm.h"
+          },
+          "hashes": {
+            "sha-256": "a530b66f822e3955ca5aba2ac36295836e8aacc8385f55afa61e659126d49cea"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/leonid/source/repos/obsplaginportraitsegmentation/obsplaginportraitsegmentation/models/modelpphumanseg.h"
+          },
+          "hashes": {
+            "sha-256": "eb225b84964cffbf2a66ffeb0878bda0ce614b18378586057fedf622078f2041"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/leonid/source/repos/obsplaginportraitsegmentation/obsplaginportraitsegmentation/ort-utils/ortmodeldata.h"
+          },
+          "hashes": {
+            "sha-256": "f6492daa262bd90b8fb7d07b28df500c107d7807cd4d263cb31825c8407a5e34"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/leonid/source/repos/obsplaginportraitsegmentation/obsplaginportraitsegmentation/ort-utils/ort-session-utils.h"
+          },
+          "hashes": {
+            "sha-256": "4d4aa15e6276ff397ef49bf6d21705b98d8ae375596b17927a6b578ee33f4605"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/leonid/source/repos/obsplaginportraitsegmentation/obsplaginportraitsegmentation/consts.h"
+          },
+          "hashes": {
+            "sha-256": "7113799918281e1f66ffab19f2ac1b19c0442ccb4bd5210b6b5b1aaea6a645bb"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/vcpkg/installed/x64-windows-static/include/glad/glad.h"
+          },
+          "hashes": {
+            "sha-256": "da5cdcc263354af07638fc542271381f1c84d8fb1aef2fe6a4e78786541d0de8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/vcpkg/installed/x64-windows-static/include/khr/khrplatform.h"
+          },
+          "hashes": {
+            "sha-256": "7b1e01aaa7ad8f6fc34b5c7bdf79ebf5189bb09e2c4d2e79fc5d350623d11e83"
+          }
+        }
+      ]
+    }
+  ]
+}
