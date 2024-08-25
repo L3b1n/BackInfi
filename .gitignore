@@ -1,3 +1,4 @@
 .vs
 OBSPlaginPortraitSegmentation/vendor/Opencv/Lib
 OBSPlaginPortraitSegmentation/vendor/Onnxruntime/Lib
+**.tlog
