@@ -1,9 +1,9 @@
 -- Include directories relative to root folder (solution directory)
 IncludeDir = {}
-IncludeDir["GLFW"]        = "%{wks.location}/vendor/GLFW/include"
-IncludeDir["Glad"]        = "%{wks.location}/vendor/Glad/include"
-IncludeDir["Opencv"]      = "%{wks.location}/vendor/Opencv/include"
-IncludeDir["Onnxruntime"] = "%{wks.location}/vendor/Onnxruntime/include"
+IncludeDir["GLFW"]        = "vendor/GLFW/include"
+IncludeDir["Glad"]        = "vendor/Glad/include"
+IncludeDir["Opencv"]      = "vendor/Opencv/include"
+IncludeDir["Onnxruntime"] = "vendor/Onnxruntime/include"
 
 LibsDir = {}
 LibsDir["Opencv"]      = "vendor/Opencv/Lib"
@@ -36,6 +36,7 @@ project "OBSPlaginPortraitSegmentation"
 	includedirs
 	{
 		"src",
+		"vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
 		"%{IncludeDir.Opencv}",
@@ -52,6 +53,9 @@ project "OBSPlaginPortraitSegmentation"
 	{
 		"GLFW",
 		"Glad",
+		"gdi32.lib",
+		"Winmm.lib",
+		"Version.lib",
 		"opengl32.lib",
 	}
 
