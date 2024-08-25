@@ -1,4 +1,8 @@
 .vs
+.vscode
+bin-int
 OBSPlaginPortraitSegmentation/vendor/Opencv/Lib
 OBSPlaginPortraitSegmentation/vendor/Onnxruntime/Lib
 **.tlog
+**.vcxproj
+**.vcxproj.filters
