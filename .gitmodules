@@ -1,0 +1,3 @@
+[submodule "OBSPlaginPortraitSegmentation/Vendor/GLFW"]
+	path = OBSPlaginPortraitSegmentation/Vendor/GLFW
+	url = https://github.com/TheCherno/glfw.git
