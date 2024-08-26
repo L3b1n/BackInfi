@@ -1,5 +1,5 @@
-workspace "OBSPlaginPortraitSegmentation"
-	startproject "OBSPlaginPortraitSegmentation"
+workspace "BackInfi"
+	startproject "BackInfi"
 	architecture "x64"
 
 	configurations
@@ -16,4 +16,4 @@ workspace "OBSPlaginPortraitSegmentation"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
-include "OBSPlaginPortraitSegmentation"
+include "BackInfi"
