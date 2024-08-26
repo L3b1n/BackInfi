@@ -1,3 +1,6 @@
 [submodule "OBSPlaginPortraitSegmentation/vendor/spdlog"]
 	path = OBSPlaginPortraitSegmentation/vendor/spdlog
 	url = https://github.com/gabime/spdlog.git
+[submodule "OBSPlaginPortraitSegmentation/vendor/GLFW"]
+	path = OBSPlaginPortraitSegmentation/vendor/GLFW
+	url = https://github.com/L3b1n/glfw.git
