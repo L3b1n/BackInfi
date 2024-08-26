@@ -71,10 +71,10 @@ project "BackInfi"
 
 		defines
 		{
-			"BC_PLATFORM_WINDOWS"
 		}
 
 	filter "configurations:Debug"
+		defines "BC_DEBUG"
 		runtime "Debug"
 		symbols "on"
 
@@ -97,6 +97,7 @@ project "BackInfi"
 		}
 
 	filter "configurations:Release"
+		defines "BC_RELEASE"
 		runtime "Release"
 		optimize "on"
 
@@ -120,6 +121,7 @@ project "BackInfi"
 		}
 
 	filter "configurations:Dist"
+		defines "BC_DIST"
 		runtime "Release"
 		optimize "on"
 
