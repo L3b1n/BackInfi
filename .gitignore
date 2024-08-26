@@ -1,8 +1,7 @@
 .vs
 .vscode
 bin-int
-OBSPlaginPortraitSegmentation/vendor/Opencv/Lib
-OBSPlaginPortraitSegmentation/vendor/Onnxruntime/Lib
+**/Lib
 **.tlog
 **.user
 **.vcxproj
