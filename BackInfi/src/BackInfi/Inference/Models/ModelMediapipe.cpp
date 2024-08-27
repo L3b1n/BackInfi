@@ -21,17 +21,17 @@ namespace BackInfi
 				// and also avoid float/Vec2f casting.
 				switch (activation)
 				{
-				case Activation::NONE: { //NONE
+				case Model::Activation::NONE: { //NONE
 					new_mask_value = mask_value[0];
 					break;
 				}
-				case Activation::SIGMOID: { //SIGMOID
+				case Model::Activation::SIGMOID: { //SIGMOID
 					const float pixel0 = mask_value[0];
 					new_mask_value =
 						static_cast<float>(1.0 / (std::exp(-pixel0) + 1.0));
 					break;
 				}
-				case Activation::SOFTMAX: { //SOFTMAX
+				case Model::Activation::SOFTMAX: { //SOFTMAX
 					const float pixel0 = mask_value[0];
 					const float pixel1 = mask_value[1];
 					const float max_pixel = max(pixel0, pixel1);
