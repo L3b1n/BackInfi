@@ -20,8 +20,8 @@ namespace BackInfi
 }
 
 // Core log macros
-#define LOG_TRACE(...)    ::BackInfi::Logger::GetCoreLogger()->trace(__VA_ARGS__)
-#define LOG_INFO(...)     ::BackInfi::Logger::GetCoreLogger()->info(__VA_ARGS__)
-#define LOG_WARN(...)     ::BackInfi::Logger::GetCoreLogger()->warn(__VA_ARGS__)
-#define LOG_ERROR(...)    ::BackInfi::Logger::GetCoreLogger()->error(__VA_ARGS__)
-#define LOG_CRITICAL(...) ::BackInfi::Logger::GetCoreLogger()->critical(__VA_ARGS__)
+#define BC_CORE_TRACE(...)    ::BackInfi::Logger::GetCoreLogger()->trace(__VA_ARGS__)
+#define BC_CORE_INFO(...)     ::BackInfi::Logger::GetCoreLogger()->info(__VA_ARGS__)
+#define BC_CORE_WARN(...)     ::BackInfi::Logger::GetCoreLogger()->warn(__VA_ARGS__)
+#define BC_CORE_ERROR(...)    ::BackInfi::Logger::GetCoreLogger()->error(__VA_ARGS__)
+#define BC_CORE_CRITICAL(...) ::BackInfi::Logger::GetCoreLogger()->critical(__VA_ARGS__)
