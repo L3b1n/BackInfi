@@ -20,8 +20,6 @@
 
 #include "BackInfi/Core/Base.h"
 
-#include "BackInfi/Core/Logger.h"
-
 #ifdef BC_PLATFORM_WINDOWS
 	#include <Windows.h>
 #endif
