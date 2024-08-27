@@ -2,7 +2,7 @@
 #include <iostream>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
-#include "BackInfi/BackgroundFilter.h"
+#include "BackInfi/Inference/BackgroundFilter.h"
 #include <opencv2/opencv.hpp>
 
 void processInput(GLFWwindow* window) 
@@ -15,38 +15,6 @@ void on_trackbar(int, void*)
 {
 	cv::updateWindow("test");
 }
-
-//void drawGLTexture(GLFWwindow* window) {
-//
-//    glColor3f(1.0f, 1.0f, 1.0f);
-//
-//    glBegin(GL_TRIANGLES);
-//    glTexCoord2f(0, 1);
-//    glVertex2f(-1, -1);
-//
-//    glTexCoord2f(1, 1);
-//    glVertex2f(1, -1);
-//
-//    glTexCoord2f(0, 0);
-//    glVertex2f(-1, 1);
-//
-//    glTexCoord2f(1, 1);
-//    glVertex2f(1, -1);
-//
-//    glTexCoord2f(1, 0);
-//    glVertex2f(1, 1);
-//
-//    glTexCoord2f(0, 0);
-//    glVertex2f(-1, 1);
-//    glEnd();
-//
-//    glfwSwapBuffers(window);
-//    glfwPollEvents();
-//
-//    glFlush();
-//    glFinish();
-//
-//}
 
 // glfw: whenever the window size changed (by OS or user resize) this callback function executes
 // ---------------------------------------------------------------------------------------------
@@ -74,7 +42,7 @@ int main()
 	GLFWwindow* window = glfwCreateWindow(width, height, "LearnOpenGL", NULL, NULL);
 	if (window == NULL)
 	{
-		LOG_ERROR("Failed to create GLFW window");
+		BC_CORE_ERROR("Failed to create GLFW window");
 		glfwTerminate();
 		return -1;
 	}
@@ -85,12 +53,12 @@ int main()
 	// ---------------------------------------
 	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
 	{
-		LOG_ERROR("Failed to initialize GLAD");
+		BC_CORE_ERROR("Failed to initialize GLAD");
 		return -1;
 	}
 
 	const char* version = (const char*)glGetString(GL_VERSION);
-	LOG_INFO("GlVersion: {0}", version);
+	BC_CORE_INFO("GlVersion: {0}", version);
 
 	// To make sure the program does not quit running
 	cv::VideoCapture cap(0);
@@ -106,10 +74,10 @@ int main()
 	filter.filterActivate();
 	//filter.loadBackground("background.jpg");
 
-	// const auto mask_channel = 1;
-	// filter.GlSetup(mask_channel);
+	const auto mask_channel = 1;
+	filter.GlSetup(mask_channel);
 
-	//glDisable(GL_BLEND);
+	glDisable(GL_BLEND);
 
 	int frames = 0;
 	double fps = 0.0;
@@ -117,12 +85,8 @@ int main()
 	bool load_flag = true;
 	auto start_time = std::chrono::high_resolution_clock::now();
 
-	//int rotx = 0, roty = 0;
-	//cv::namedWindow("test", cv::WINDOW_AUTOSIZE);
-	//cv::createTrackbar("X-rotation", "test", &rotx, 10, on_trackbar);
-	//cv::createTrackbar("Y-rotation", "test", &roty, 10, on_trackbar);
-
-	while (load_flag) {
+	while (load_flag)
+	{
 		cv::Mat temp;
 		cap >> temp;
 
@@ -131,21 +95,19 @@ int main()
 		filter.filterVideoTick(temp.rows, temp.cols, temp.type(), temp.data);
 		filter.blendSegmentationSmoothing(0.98);
 		cv::Mat frame = filter.blendBackgroundAndForeground();
-		//unsigned char* data = filter.blendBackgroundAndForeground();
         
 		//unsigned char* data = (unsigned char*)malloc(sizeof(unsigned char) * 1920 * 1080 * 4);
 		//filter.blendBackgroundAndForeground(data);
 		//cv::Mat frame(temp.size(), temp.type(), data);
 
-		// glfwSwapBuffers(window);
-		// glfwPollEvents();
-
-		//drawGLTexture(window);
+		glfwSwapBuffers(window);
+		glfwPollEvents();
 
 		frames++;
 		auto end_time = std::chrono::high_resolution_clock::now();
 		double elapsed_time = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time).count() / 1000.0;
-		if (elapsed_time >= 1.0) {
+		if (elapsed_time >= 1.0)
+		{
 			fps = frames / elapsed_time;
 			frames = 0;
 			start_time = std::chrono::high_resolution_clock::now();
