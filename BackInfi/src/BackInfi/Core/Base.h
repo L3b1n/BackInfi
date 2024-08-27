@@ -32,3 +32,6 @@
 #define BC_STRINGIFY_MACRO(x) #x
 
 #define BIT(x) (1 << x)
+
+#include "BackInfi/Core/Assert.h"
+#include "BackInfi/Core/Logger.h"
