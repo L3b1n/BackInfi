@@ -34,8 +34,8 @@ namespace BackInfi
 				case Model::Activation::SOFTMAX: { //SOFTMAX
 					const float pixel0 = mask_value[0];
 					const float pixel1 = mask_value[1];
-					const float max_pixel = max(pixel0, pixel1);
-					const float min_pixel = min(pixel0, pixel1);
+					const float max_pixel = std::max(pixel0, pixel1);
+					const float min_pixel = std::min(pixel0, pixel1);
 					const float softmax_denom =
 						/*exp(max_pixel - max_pixel)=*/1.0f +
 						std::exp(min_pixel - max_pixel);
