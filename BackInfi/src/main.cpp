@@ -69,7 +69,7 @@ int main()
 	cv::namedWindow("Background remove app", cv::WINDOW_NORMAL);
 	cv::resizeWindow("Background remove app", width, height);
 
-	BackgroundFilter filter(height, width);
+	BackInfi::BackgroundFilter filter(height, width);
 	filter.filterUpdate(true);
 	filter.filterActivate();
 	//filter.loadBackground("background.jpg");
