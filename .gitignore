@@ -1,5 +1,6 @@
 .vs
 .vscode
+bin
 bin-int
 **/Lib
 **.tlog
