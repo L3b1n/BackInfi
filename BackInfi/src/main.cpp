@@ -1,29 +1,10 @@
-#include <bcpch.h>
-#include <iostream>
+#include "bcpch.h"
+
 #include <glad/glad.h>
-#include <GLFW/glfw3.h>
-#include "BackInfi/Inference/BackgroundFilter.h"
 #include <opencv2/opencv.hpp>
 
-void processInput(GLFWwindow* window) 
-{
-	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-		glfwSetWindowShouldClose(window, true);
-}
-
-void on_trackbar(int, void*)
-{
-	cv::updateWindow("test");
-}
-
-// glfw: whenever the window size changed (by OS or user resize) this callback function executes
-// ---------------------------------------------------------------------------------------------
-void framebuffer_size_callback(GLFWwindow* window, int width, int height)
-{
-	// make sure the viewport matches the new window dimensions; note that width and 
-	// height will be significantly larger than specified on retina displays.
-	glViewport(0, 0, width, height);
-}
+#include "BackInfi/Core/Window.h"
+#include "BackInfi/Inference/BackgroundFilter.h"
 
 const int width = 1280;
 const int height = 720;
@@ -31,34 +12,8 @@ const int height = 720;
 int main()
 {
 	BackInfi::Logger::Init();
-	glfwInit();
-	//glfwWindowHint(GLFW_VISIBLE, GLFW_FALSE); // uncomment this for windowsless glfw
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-
-	// glfw window creation
-	// --------------------
-	GLFWwindow* window = glfwCreateWindow(width, height, "LearnOpenGL", NULL, NULL);
-	if (window == NULL)
-	{
-		BC_CORE_ERROR("Failed to create GLFW window");
-		glfwTerminate();
-		return -1;
-	}
-	glfwMakeContextCurrent(window);
-	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
-
-	// glad: load all OpenGL function pointers
-	// ---------------------------------------
-	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
-	{
-		BC_CORE_ERROR("Failed to initialize GLAD");
-		return -1;
-	}
-
-	const char* version = (const char*)glGetString(GL_VERSION);
-	BC_CORE_INFO("GlVersion: {0}", version);
+	
+	std::unique_ptr<BackInfi::Window> Window = BackInfi::Window::Create(BackInfi::WindowProp("Test"));
 
 	// To make sure the program does not quit running
 	cv::VideoCapture cap(0);
@@ -99,9 +54,7 @@ int main()
 		//unsigned char* data = (unsigned char*)malloc(sizeof(unsigned char) * 1920 * 1080 * 4);
 		//filter.blendBackgroundAndForeground(data);
 		//cv::Mat frame(temp.size(), temp.type(), data);
-
-		glfwSwapBuffers(window);
-		glfwPollEvents();
+		Window->OnUpdate();
 
 		frames++;
 		auto end_time = std::chrono::high_resolution_clock::now();
@@ -124,7 +77,6 @@ int main()
 	}
 	cap.release();
 	cv::destroyAllWindows();
-	glfwTerminate();
 	std::cin.get();
 	return 0;
 }
