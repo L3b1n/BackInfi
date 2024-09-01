@@ -113,10 +113,6 @@ namespace BackInfi
 	{
 		uint32_t bbp = Utils::GetStep(m_DataFormat);
 		BC_CORE_ASSERT(size == m_Width * m_Height * bbp, "Data must be entire texture!");
-		if (size != m_Width * m_Height * bbp)
-		{
-			BC_CORE_ERROR("Width:{0}, Height:{1}, bbp:{2}, Size:{3}, {4}", m_Height, m_Width, size, bbp);
-		}
 		glBindTexture(GL_TEXTURE_2D, m_RendererID);
 		glTexSubImage2D(
 			GL_TEXTURE_2D,                             // Type of texture
