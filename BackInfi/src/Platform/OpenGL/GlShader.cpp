@@ -105,20 +105,6 @@ namespace BackInfi
 		glAttachShader(m_RendererID, vertex);
 		glAttachShader(m_RendererID, fragment);
 
-		const GLint attr_location[NUM_ATTRIBUTES] = {
-			ATTRIB_VERTEX,
-			ATTRIB_TEXTURE_POSITION,
-		};
-		const GLchar* attr_name[NUM_ATTRIBUTES] = {
-			"position",
-			"texture_coordinate",
-		};
-
-		// Attribute location binding must be set before linking.
-		for (int i = 0; i < NUM_ATTRIBUTES; i++) {
-			glBindAttribLocation(m_RendererID, attr_location[i], attr_name[i]);
-		}
-
 		glLinkProgram(m_RendererID);
 		CheckCompileErrors(m_RendererID, "PROGRAM");
 
