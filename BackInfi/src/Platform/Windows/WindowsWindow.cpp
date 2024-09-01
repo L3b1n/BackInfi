@@ -40,8 +40,8 @@ namespace BackInfi
 		}
 
 		
-		#if defined(HZ_DEBUG)
-		if (RendererAPI::GetAPI() == RendererAPI::API::OpenGL)
+		#if defined(BC_DEBUG)
+		if (RendererAPI::GetAPI() == RendererAPI::API::OPENGL)
 			glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, GLFW_TRUE);
 		#endif
 		m_Window = glfwCreateWindow((int)m_Info.Width, (int)m_Info.Height, m_Info.Title.c_str(), nullptr, nullptr);
