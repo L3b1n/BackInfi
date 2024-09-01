@@ -6,6 +6,8 @@
 #include "BackInfi/Core/Window.h"
 #include "BackInfi/Inference/BackgroundFilter.h"
 
+#include "BackInfi/Debug/GlDebug.h"
+
 const int width = 1280;
 const int height = 720;
 
@@ -15,8 +17,11 @@ int main()
 	
 	std::unique_ptr<BackInfi::Window> Window = BackInfi::Window::Create(BackInfi::WindowProp("Test"));
 
+	BackInfi::EnableGLDebugging();
+
 	// To make sure the program does not quit running
-	cv::VideoCapture cap(0);
+	cv::VideoCapture cap;
+	cap.open(0);
 	cap.set(cv::CAP_PROP_FRAME_WIDTH, width);
 	cap.set(cv::CAP_PROP_FRAME_HEIGHT, height);
 	cap.set(cv::CAP_PROP_FPS, 30);
