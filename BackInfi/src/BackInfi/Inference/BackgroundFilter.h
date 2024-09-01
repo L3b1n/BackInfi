@@ -16,7 +16,9 @@
 #include "BackInfi/Inference/Models/ModelPPHumanSeg.h"
 
 #include "BackInfi/Renderer/Shader.h"
+#include "BackInfi/Renderer/Buffer.h"
 #include "BackInfi/Renderer/Texture.h"
+#include "BackInfi/Renderer/VertexArray.h"
 
 #include "BackInfi/Inference/FilterData.h"
 #include "BackInfi/Inference/GlPrograms.h"
@@ -102,10 +104,9 @@ namespace BackInfi
 
 		BackgroundRemovalFilter *tf;
 
-		GLuint m_VAO;
-		GLuint m_VBO[2];
-
 		std::shared_ptr<BackInfi::Shader>  m_Shader;
+
+		std::shared_ptr<BackInfi::VertexArray> m_VertexBuffer;
 
 		std::shared_ptr<BackInfi::Texture> m_MaskTexture;
 		std::shared_ptr<BackInfi::Texture> m_InputTexture;
@@ -119,7 +120,8 @@ namespace BackInfi
 
 		inline cv::Vec3b Blend(const cv::Vec3b& color1, const cv::Vec3b& color2,
 			float weight, int invert_mask,
-			int adjust_with_luminance) {
+			int adjust_with_luminance)
+		{
 			weight = (1 - invert_mask) * weight + invert_mask * (1.0f - weight);
 
 			float luminance =
