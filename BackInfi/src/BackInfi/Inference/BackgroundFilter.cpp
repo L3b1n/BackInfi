@@ -456,53 +456,26 @@ namespace BackInfi
 	{
 		m_Shader = BackInfi::Shader::Create("Background blend", kBasicVertex, kFragmentBackground);
 
-		CALL(glGenVertexArrays(1, &m_VAO));
-		CALL(glBindVertexArray(m_VAO));
+		m_VertexBuffer = BackInfi::VertexArray::Create();
 
-		// Generate a VBOs
-		CALL(glGenBuffers(2, m_VBO));
+		float vertices[4 * 4] = {
+			-1.0f, -1.0f,  /*bottom left*/   0.0f, 0.0f,  // bottom left
+			1.0f,  -1.0f,  /*bottom right*/  1.0f, 0.0f,  // bottom right
+			-1.0f, 1.0f,   /*top left*/      0.0f, 1.0f,  // top left
+			1.0f,  1.0f,   /*top right*/     1.0f, 1.0f,  // top right
+		};
 
-		// Fill in static vbo (vbo 0), to be reused in render part.
-		// -------------------------------------------------------------------
-		CALL(glBindBuffer(GL_ARRAY_BUFFER, m_VBO[0]));
-		CALL(glBufferData(
-			GL_ARRAY_BUFFER,         // The tanget buffer type
-			4 * 2 * sizeof(GLfloat), // The size in bytes of the buffer object's new data store
-			kBasicSquareVertices,    // A pointer to the data that will be copied into the data store
-			GL_STATIC_DRAW           // The expected usage pattern of the data store
-		));
-		CALL(glEnableVertexAttribArray(ATTRIB_VERTEX));
-		CALL(glVertexAttribPointer(
-			ATTRIB_VERTEX,           // Attribute 0 -- The layout position in the shader
-			2,                       // Size        -- Number of components per vertex
-			GL_FLOAT,                // Type        -- The data type of the above components
-			0,                       // Normalized  -- Specifies if fixed - point data values should be normalized
-			0,                       // Stride      -- Specifies the byte offset between consecutive attributes
-			nullptr                  // Pointer     -- Specifies the offset of the first component
-		));
-		CALL(glBindBuffer(GL_ARRAY_BUFFER, 0));
-		// -------------------------------------------------------------------
+		std::shared_ptr<BackInfi::VertexBuffer> vertexBuffer = BackInfi::VertexBuffer::Create(vertices, sizeof(vertices));
+		BackInfi::BufferLayout layout = {
+			{ BackInfi::ShaderDataType::Float2, "position" },
+			{ BackInfi::ShaderDataType::Float2, "texture_coordinate" },
+		};
+		vertexBuffer->SetLayout(layout);
+		m_VertexBuffer->AddVertexBuffer(vertexBuffer);
 
-		// Fill in static vbo (vbo 1), to be reused in render part.
-		// -------------------------------------------------------------------
-		CALL(glBindBuffer(GL_ARRAY_BUFFER, m_VBO[1]));
-		CALL(glBufferData(
-			GL_ARRAY_BUFFER,         // The tanget buffer type
-			4 * 2 * sizeof(GLfloat), // The size in bytes of the buffer object's new data store
-			kBasicTextureVertices,   // A pointer to the data that will be copied into the data store
-			GL_STATIC_DRAW           // The expected usage pattern of the data store
-		));
-		CALL(glEnableVertexAttribArray(ATTRIB_TEXTURE_POSITION));
-		CALL(glVertexAttribPointer(
-			ATTRIB_TEXTURE_POSITION, // Attribute 0 -- The layout position in the shader
-			2,                       // Size        -- Number of components per vertex
-			GL_FLOAT,                // Type        -- The data type of the above components
-			0,                       // Normalized  -- Specifies if fixed - point data values should be normalized
-			0,                       // Stride      -- Specifies the byte offset between consecutive attributes
-			nullptr                  // Pointer     -- Specifies the offset of the first component
-		));
-		CALL(glBindBuffer(GL_ARRAY_BUFFER, 0));
-		CALL(glBindVertexArray(0));
+		//uint32_t indices[3] = { 0, 1, 2 };
+		//std::shared_ptr<BackInfi::IndexBuffer> indexBuffer = BackInfi::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t));
+		//m_VertexBuffer->SetIndexBuffer(indexBuffer);
 
 		{
 			BackInfi::TextureSpecification specs = { 4, 1280, 720, true, BackInfi::ImageFormat::RGBA8 };
@@ -597,9 +570,9 @@ namespace BackInfi
 		m_Shader->SetInt("frame2", 2);
 		m_Shader->SetInt("mask", 3);
 
-		glBindVertexArray(m_VAO);
+		m_VertexBuffer->Bind();
 		glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
-		glBindVertexArray(0);
+		m_VertexBuffer->UnBind();
 
 		glFlush();
 
