@@ -4,7 +4,7 @@
 
 #include <glad/glad.h>
 
-namespace BackInfi
+namespace BackInfi::Debug
 {
 
 	enum class DebugLogLevel
