@@ -2,7 +2,7 @@
 
 #include "BackInfi/Debug/GlDebug.h"
 
-namespace BackInfi
+namespace BackInfi::Debug
 {
 
 	static DebugLogLevel s_DebugLogLevel = DebugLogLevel::HighAssert;
