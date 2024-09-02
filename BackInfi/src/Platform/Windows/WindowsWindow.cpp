@@ -1,6 +1,6 @@
 #include "bcpch.h"
 
-#include "BackInfi/Renderer/RendererAPI.h"
+#include "BackInfi/Renderer/Renderer.h"
 
 #include "Platform/Windows/WindowsWindow.h"
 
@@ -61,6 +61,8 @@ namespace BackInfi
 
 			//WindowResizeEvent event(width, height);
 			//info.EventCallback(event);
+
+			Renderer::OnWindowResize(width, height);
 		});
 
 		glfwSetWindowCloseCallback(m_Window, [](GLFWwindow* window)
