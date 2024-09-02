@@ -4,9 +4,8 @@
 #include <opencv2/opencv.hpp>
 
 #include "BackInfi/Core/Window.h"
-#include "BackInfi/Inference/BackgroundFilter.h"
 
-#include "BackInfi/Debug/GlDebug.h"
+#include "BackInfi/Inference/BackgroundFilter.h"
 
 const int width = 1280;
 const int height = 720;
@@ -16,8 +15,6 @@ int main()
 	BackInfi::Logger::Init();
 	
 	std::unique_ptr<BackInfi::Window> Window = BackInfi::Window::Create(BackInfi::WindowProp("Test"));
-
-	BackInfi::EnableGLDebugging();
 
 	// To make sure the program does not quit running
 	cv::VideoCapture cap;
@@ -36,8 +33,6 @@ int main()
 
 	const auto mask_channel = 1;
 	filter.GlSetup(mask_channel);
-
-	glDisable(GL_BLEND);
 
 	int frames = 0;
 	double fps = 0.0;
