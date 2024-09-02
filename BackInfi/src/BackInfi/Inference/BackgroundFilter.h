@@ -18,6 +18,7 @@
 #include "BackInfi/Renderer/Shader.h"
 #include "BackInfi/Renderer/Buffer.h"
 #include "BackInfi/Renderer/Texture.h"
+#include "BackInfi/Renderer/Renderer.h"
 #include "BackInfi/Renderer/VertexArray.h"
 
 #include "BackInfi/Inference/FilterData.h"
@@ -26,26 +27,11 @@
 namespace BackInfi
 {
 
-	// A square covering the full clip space.
-	static const GLfloat kBasicSquareVertices[] = {
-		-1.0f, -1.0f,  // bottom left
-		1.0f,  -1.0f,  // bottom right
-		-1.0f, 1.0f,   // top left
-		1.0f,  1.0f,   // top right
-	};
-
-	// Places a texture on kBasicSquareVertices with normal alignment.
-	static const GLfloat kBasicTextureVertices[] = {
-		0.0f, 0.0f,  // bottom left
-		1.0f, 0.0f,  // bottom right
-		0.0f, 1.0f,  // top left
-		1.0f, 1.0f,  // top right
-	};
-
 	class BackgroundFilter
 	{
 	public:	
-		BackgroundFilter() {
+		BackgroundFilter()
+		{
 			tf = new BackgroundRemovalFilter();
 			std::string instanceName{"background-removal-inference"};
 			tf->env.reset(new Ort::Env(OrtLoggingLevel::ORT_LOGGING_LEVEL_ERROR, instanceName.c_str()));
@@ -68,7 +54,8 @@ namespace BackInfi
 
 		void filterDeactivate() { tf->isDisabled = true; }
 
-		void loadBackground(const std::string path) {
+		void loadBackground(const std::string path)
+		{
 			std::string backgroundImagePath = std::filesystem::current_path().append(path).string();
 			background = cv::imread(backgroundImagePath);
 			cv::resize(background, background, cv::Size(width, height));
@@ -104,13 +91,13 @@ namespace BackInfi
 
 		BackgroundRemovalFilter *tf;
 
-		std::shared_ptr<BackInfi::Shader>  m_Shader;
+		std::shared_ptr<BackInfi::Shader>      m_Shader;
 
 		std::shared_ptr<BackInfi::VertexArray> m_VertexBuffer;
 
-		std::shared_ptr<BackInfi::Texture> m_MaskTexture;
-		std::shared_ptr<BackInfi::Texture> m_InputTexture;
-		std::shared_ptr<BackInfi::Texture> m_BackgroundTexture;
+		std::shared_ptr<BackInfi::Texture>     m_MaskTexture;
+		std::shared_ptr<BackInfi::Texture>     m_InputTexture;
+		std::shared_ptr<BackInfi::Texture>     m_BackgroundTexture;
 
 		cv::Mat BufferToMat();
 		cv::Mat TextureToMat(GLuint texture_id);
