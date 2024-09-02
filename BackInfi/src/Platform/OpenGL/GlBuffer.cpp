@@ -26,7 +26,7 @@ namespace BackInfi
 		glGenBuffers(1, &m_RendererID);
 		glBindBuffer(GL_ARRAY_BUFFER, m_RendererID);
 		glBufferData(
-			GL_ARRAY_BUFFER,           // The tanget buffer type
+			GL_ARRAY_BUFFER,           // The target buffer type
 			size,                      // The size in bytes of the buffer object's new data store
 			vertices,                  // A pointer to the data that will be copied into the data store
 			GL_STATIC_DRAW             // The expected usage pattern of the data store
@@ -52,7 +52,7 @@ namespace BackInfi
 	{
 		glBindBuffer(GL_ARRAY_BUFFER, m_RendererID);
 		glBufferSubData(
-			GL_ARRAY_BUFFER,           // The tanget buffer type
+			GL_ARRAY_BUFFER,           // The target buffer type
 			0,                         // Data offset
 			size,                      // The size in bytes of the buffer object's new data store
 			data                       // A pointer to the data that will be copied into the data store
@@ -63,14 +63,14 @@ namespace BackInfi
 	// ---------------------------------------------------------------
 	GlIndexBuffer::GlIndexBuffer(uint32_t* indices, uint32_t count)
 	{
-		m_Count = 0;
+		m_Count = count;
 		glGenBuffers(1, &m_RendererID);
 
 		// GL_ELEMENT_ARRAY_BUFFER is not valid without an actively bound VAO
 		// Binding with GL_ARRAY_BUFFER allows the data to be loaded regardless of VAO state. 
 		glBindBuffer(GL_ARRAY_BUFFER, m_RendererID);
 		glBufferData(
-			GL_ARRAY_BUFFER,           // The tanget buffer type
+			GL_ARRAY_BUFFER,           // The target buffer type
 			count * sizeof(uint32_t),  // The size in bytes of the buffer object's new data store
 			indices,                   // A pointer to the data that will be copied into the data store
 			GL_STATIC_DRAW             // The expected usage pattern of the data store
