@@ -454,6 +454,8 @@ namespace BackInfi
 
 	bool BackgroundFilter::GlSetup(const int mask_channel)
 	{
+		Renderer::Init();
+
 		m_Shader = BackInfi::Shader::Create("Background blend", kBasicVertex, kFragmentBackground);
 
 		m_VertexBuffer = BackInfi::VertexArray::Create();
@@ -473,22 +475,18 @@ namespace BackInfi
 		vertexBuffer->SetLayout(layout);
 		m_VertexBuffer->AddVertexBuffer(vertexBuffer);
 
-		//uint32_t indices[3] = { 0, 1, 2 };
-		//std::shared_ptr<BackInfi::IndexBuffer> indexBuffer = BackInfi::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t));
-		//m_VertexBuffer->SetIndexBuffer(indexBuffer);
+		uint32_t indices[6] = { 0, 1, 3, 3, 2, 0 };
+		std::shared_ptr<BackInfi::IndexBuffer> indexBuffer = BackInfi::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t));
+		m_VertexBuffer->SetIndexBuffer(indexBuffer);
 
-		{
-			BackInfi::TextureSpecification specs = { 4, 1280, 720, true, BackInfi::ImageFormat::RGBA8 };
-			m_InputTexture = BackInfi::Texture2D::Create(specs);
-		}
-		{
-			BackInfi::TextureSpecification specs = { 1, 1280, 720, true, BackInfi::ImageFormat::RGBA8 };
-			m_MaskTexture = BackInfi::Texture2D::Create(specs);
-		}
-		{
-			BackInfi::TextureSpecification specs = { 4, 1280, 720, true, BackInfi::ImageFormat::RGBA8 };
-			m_BackgroundTexture = BackInfi::Texture2D::Create(specs);
-		}
+		m_InputTexture      = BackInfi::Texture2D::Create({ 4, 1280, 720, true, BackInfi::ImageFormat::RGBA8 });
+		m_MaskTexture       = BackInfi::Texture2D::Create({ 1, 1280, 720, true, BackInfi::ImageFormat::R8 });
+		m_BackgroundTexture = BackInfi::Texture2D::Create({ 4, 1280, 720, true, BackInfi::ImageFormat::RGBA8 });
+
+		m_Shader->Bind();
+		m_Shader->SetInt("frame1", 1);
+		m_Shader->SetInt("frame2", 2);
+		m_Shader->SetInt("mask", 3);
 
 		return true;
 	}
@@ -496,7 +494,7 @@ namespace BackInfi
 	cv::Mat BackgroundFilter::blendBackgroundAndForeground()
 	{
 
-		if (tf->inputRGBA.empty()) { std::cerr << "Error! Input image is empty!\n"; }
+		if (tf->inputRGBA.empty()) { BC_CORE_ERROR("Error! Input image is empty!"); }
 
 		cv::Mat imageRGBA;
 		{
@@ -508,7 +506,7 @@ namespace BackInfi
 		}
 		cv::blur(imageRGBA, background, cv::Size(19, 19));
 
-		cv::Mat mask_matSingle = tf->backgroundMask;
+		cv::Mat mask_mat = tf->backgroundMask;
 
 		// opencv part --------------------------------------------------
 
@@ -546,15 +544,10 @@ namespace BackInfi
 
 		// testing opengl part ------------------------------------------
 
-		// now flip is in filterVideoTick
+		RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1.0f });
+		RenderCommand::Clear();
 
-		cv::Mat mask_mat;
-		mask_matSingle.convertTo(mask_matSingle, CV_8UC1);
-		cv::Mat zeros = cv::Mat::zeros(mask_matSingle.size(), mask_matSingle.type());
-		std::vector<cv::Mat> testVector = { mask_matSingle, zeros, zeros, zeros };
-		cv::merge(testVector, mask_mat);
-
-		glDisable(GL_BLEND);
+		Renderer::BeginScene();
 
 		m_MaskTexture->LoadTexture(mask_mat.data, mask_mat.step[0] * mask_mat.rows);
 		m_InputTexture->LoadTexture(tf->inputRGBA.data, tf->inputRGBA.step[0] * tf->inputRGBA.rows);
@@ -563,26 +556,11 @@ namespace BackInfi
 		m_InputTexture->Bind(1);
 		m_BackgroundTexture->Bind(2);
 		m_MaskTexture->Bind(3);
-
-		m_Shader->Bind();
-
-		m_Shader->SetInt("frame1", 1);
-		m_Shader->SetInt("frame2", 2);
-		m_Shader->SetInt("mask", 3);
-
-		m_VertexBuffer->Bind();
-		glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
-		m_VertexBuffer->UnBind();
-
-		glFlush();
-
-		m_Shader->UnBind();
-
-		m_InputTexture->UnBind(1);
-		m_BackgroundTexture->UnBind(2);
-		m_MaskTexture->UnBind(3);
+		Renderer::Submit(m_Shader, m_VertexBuffer);
 
 		cv::Mat output_mat = BufferToMat();
+
+		Renderer::EndScene();
 
 		// end of testing opengl part -----------------------------------
 
@@ -590,74 +568,3 @@ namespace BackInfi
 	}
 
 }
-
-
-//#version 330
-//
-//#ifdef GL_ES
-//#define DEFAULT_PRECISION(p, t) precision p t;
-//#else
-//#define DEFAULT_PRECISION(p, t)
-//#define lowp
-//#define mediump
-//#define highp
-//#endif  // defined(GL_ES)
-//
-//#if __VERSION__ < 130
-//#define in attribute
-//#define out varying
-//#endif  // __VERSION__ < 130
-//
-//    // vertex position in clip space (-1..1)
-//    in vec4 position;
-//
-//// texture coordinate for each vertex in normalized texture space (0..1)
-//in mediump vec4 texture_coordinate;
-//
-//// texture coordinate for fragment shader (will be interpolated)
-//out mediump vec2 sample_coordinate;
-//
-//void main() {
-//    gl_Position = position;
-//    sample_coordinate = texture_coordinate.xy;
-//}
-
-//#version 330
-//
-//#ifdef GL_ES
-//#define DEFAULT_PRECISION(p, t) precision p t;
-//#else
-//#define DEFAULT_PRECISION(p, t)
-//#define lowp
-//#define mediump
-//#define highp
-//#endif  // defined(GL_ES)
-//
-//#if __VERSION__ < 130                                     
-//#define in varying
-//#define texture texture2D
-//#if defined(GL_ES) && !defined(GL_FRAGMENT_PRECISION_HIGH)
-//#define highp mediump
-//#endif  // GL_ES && !GL_FRAGMENT_PRECISION_HIGH
-//#elif __VERSION__ > 320 && !defined(GL_ES)
-//out vec4 frag_out;
-//#define gl_FragColor frag_out
-//#define texture2D texture
-//#endif  // __VERSION__ < 130
-//
-//DEFAULT_PRECISION(highp, float)
-//
-//in vec2 sample_coordinate;
-//uniform sampler2D frame1;
-//uniform sampler2D frame2;
-//uniform sampler2D mask;
-//
-//void main() {
-//    vec4 color1 = texture2D(frame1, sample_coordinate);
-//    vec4 color2 = texture2D(frame2, sample_coordinate);
-//    vec4 weight = texture2D(mask, sample_coordinate);
-//
-//#define MASK_COMPONENT r
-//
-//    gl_FragColor = mix(color1, color2, weight.MASK_COMPONENT);
-//}
