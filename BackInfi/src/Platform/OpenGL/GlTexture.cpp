@@ -47,7 +47,7 @@ namespace BackInfi
 			switch (format)
 			{
 			case ImageFormat::R8:
-				return GL_R8UI;
+				return GL_R8;
 			case ImageFormat::R32:
 				return GL_R32F;
 			case ImageFormat::RGB8:
