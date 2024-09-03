@@ -6,135 +6,6 @@
 namespace BackInfi
 {
 
-	void OpenGlClError() {
-		while (glGetError());
-	}
-	bool OpenGlError(const char* func, int line, const char* file) {
-		while (GLenum error = glGetError()) {
-			std::cout << "GLTest: OPENGL ERROR: " << error << " in function " << func << " at line " << line << ", FILE: " << file << "\n";
-			std::this_thread::sleep_for(std::chrono::milliseconds(10000));
-			return false;
-		}
-		return true;
-	}
-
-#define ASSERT(x) if(!(x)) __debugbreak();
-#define CALL(x) OpenGlClError(); x; ASSERT(OpenGlError(#x, __LINE__, __FILE__));
-
-#if DEBUG
-#define GL_DEBUG_LOG(type, object, action)                        \
-	  do {                                                            \
-		GLint log_length = 0;                                         \
-		glGet##type##iv(object, GL_INFO_LOG_LENGTH, &log_length);     \
-		if (log_length > 0) {                                         \
-		  GLchar* log = static_cast<GLchar*>(malloc(log_length));     \
-		  glGet##type##InfoLog(object, log_length, &log_length, log); \
-		  LOG(INFO) << #type " " action " log:\n" << log;             \
-		  free(log);                                                  \
-		}                                                             \
-	  } while (0)
-#else
-#define GL_DEBUG_LOG(type, object, action)
-#endif
-
-	enum { ATTRIB_VERTEX, ATTRIB_TEXTURE_POSITION, NUM_ATTRIBUTES };
-
-	constexpr int kMaxShaderInfoLength = 1024;
-
-	GLint GlhCompileShader(GLenum target, const GLchar* source, GLuint* shader,
-		bool force_log_errors) {
-		*shader = glCreateShader(target);
-		if (*shader == 0) {
-			return GL_FALSE;
-		}
-		CALL(glShaderSource(*shader, 1, &source, NULL));
-		CALL(glCompileShader(*shader));
-
-		GL_DEBUG_LOG(Shader, *shader, "compile");
-
-#if UNSAFE_EMSCRIPTEN_SKIP_GL_ERROR_HANDLING
-		if (!force_log_errors) {
-			return GL_TRUE;
-		}
-#endif  // UNSAFE_EMSCRIPTEN_SKIP_GL_ERROR_HANDLING
-
-		GLint status;
-
-		CALL(glGetShaderiv(*shader, GL_COMPILE_STATUS, &status));
-		//LOG_IF(ERROR, status == GL_FALSE) << "Failed to compile shader:\n" << source;
-
-		if (status == GL_FALSE) {
-			int length = 0;
-			GLchar cmessage[kMaxShaderInfoLength];
-			glGetShaderInfoLog(*shader, kMaxShaderInfoLength, &length, cmessage);
-			std::cerr << "Error message: " << std::string(cmessage, length);
-		}
-		return status;
-	}
-
-	GLint GlhLinkProgram(GLuint program, bool force_log_errors) {
-		CALL(glLinkProgram(program));
-
-#if UNSAFE_EMSCRIPTEN_SKIP_GL_ERROR_HANDLING
-		if (!force_log_errors) {
-			return GL_TRUE;
-		}
-#endif  // UNSAFE_EMSCRIPTEN_SKIP_GL_ERROR_HANDLING
-
-		GLint status;
-
-		GL_DEBUG_LOG(Program, program, "link");
-
-		CALL(glGetProgramiv(program, GL_LINK_STATUS, &status));
-		if (status == GL_FALSE) {
-			std::cerr << "Failed to link program " << program << "\n";
-		}
-
-		return status;
-	}
-
-	GLint GlhCreateProgram(const GLchar* vert_src, const GLchar* frag_src,
-		GLsizei attr_count, const GLchar* const* attr_names,
-		const GLint* attr_locations, GLuint* program,
-		bool force_log_errors)
-	{
-		GLuint vert_shader = 0;
-		GLuint frag_shader = 0;
-		GLint ok = GL_TRUE;
-
-		*program = glCreateProgram();
-		if (*program == 0) {
-			return GL_FALSE;
-		}
-
-		ok = ok && GlhCompileShader(GL_VERTEX_SHADER, vert_src, &vert_shader,
-			force_log_errors);
-		ok = ok && GlhCompileShader(GL_FRAGMENT_SHADER, frag_src, &frag_shader,
-			force_log_errors);
-
-		if (ok) {
-			CALL(glAttachShader(*program, vert_shader));
-			CALL(glAttachShader(*program, frag_shader));
-
-			// Attribute location binding must be set before linking.
-			for (int i = 0; i < attr_count; i++) {
-				CALL(glBindAttribLocation(*program, attr_locations[i], attr_names[i]));
-			}
-
-			ok = GlhLinkProgram(*program, force_log_errors);
-		}
-
-		if (vert_shader) CALL(glDeleteShader(vert_shader));
-		if (frag_shader) CALL(glDeleteShader(frag_shader));
-
-		if (!ok) {
-			CALL(glDeleteProgram(*program));
-			*program = 0;
-		}
-
-		return ok;
-	}
-
 	void BackgroundFilter::filterUpdate(const bool enableThreshold_, const float threshold_,
 		const float contourFilter_, const float smoothContour_,
 		const float feather_, const int maskEveryXframes_,
@@ -390,66 +261,26 @@ namespace BackInfi
 
 	cv::Mat BackgroundFilter::TextureToMat(GLuint texture_id)
 	{
-		CALL(glBindTexture(GL_TEXTURE_2D, texture_id));
+		glBindTexture(GL_TEXTURE_2D, texture_id);
 		unsigned char* texture_bytes = (unsigned char*)malloc(sizeof(unsigned char) * width * height * 4);
-		CALL(glGetTexImage(GL_TEXTURE_2D, 0, GL_RGBA, GL_UNSIGNED_BYTE, texture_bytes));
+		glGetTexImage(GL_TEXTURE_2D, 0, GL_RGBA, GL_UNSIGNED_BYTE, texture_bytes);
 
-		return cv::Mat(tf->inputRGBA.size(), CV_8UC4, texture_bytes); // CV_8UC3 for simple image, ..C4 for mask
+		return cv::Mat(height, width, CV_8UC4, texture_bytes); // CV_8UC3 for simple image, ..C4 for mask
 	}
 
 	cv::Mat BackgroundFilter::BufferToMat()
 	{
 		cv::Mat output_mat(tf->inputRGBA.size(), CV_8UC4); // because of RGBA
 		// use fast 4-byte alignment (default anyway) if possible
-		CALL(glPixelStorei(GL_PACK_ALIGNMENT, (output_mat.step & 3) ? 1 : 4));
+		glPixelStorei(GL_PACK_ALIGNMENT, (output_mat.step & 3) ? 1 : 4);
 
 		// set length of one complete row in destination data (doesn't need to equal img.cols)
-		CALL(glPixelStorei(GL_PACK_ROW_LENGTH, (GLint)(output_mat.step / output_mat.elemSize())));
-		CALL(glReadPixels(0, 0, output_mat.cols, output_mat.rows, GL_RGBA, GL_UNSIGNED_BYTE, output_mat.data));
+		glPixelStorei(GL_PACK_ROW_LENGTH, (GLint)(output_mat.step / output_mat.elemSize()));
+		glReadPixels(0, 0, output_mat.cols, output_mat.rows, GL_RGBA, GL_UNSIGNED_BYTE, output_mat.data);
 		//cv::flip(output_mat, output_mat, 0);
 		cv::cvtColor(output_mat, output_mat, cv::COLOR_RGBA2BGR);
 
 		return output_mat;
-	}
-
-	void BackgroundFilter::BindCVMatToGLTexture(cv::Mat& image, GLuint& imageTexture)
-	{
-		if (image.empty()) {
-			std::cerr << "image empty\n";
-		}
-		else {
-			//CALL(glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE));
-			//CALL(glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE));
-			CALL(glGenTextures(1, &imageTexture));
-			CALL(glBindTexture(GL_TEXTURE_2D, imageTexture));
-
-			// Set texture clamping method
-			//CALL(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP)); // I have those lines, but in mediapipe realisation they have lines below
-			//CALL(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP)); // I have those lines, but in mediapipe realisation they have lines below
-			CALL(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE));
-			CALL(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE));
-
-			//CALL(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST)); // I have this line, but in mediapipe realisation they have line below
-			CALL(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR));
-			CALL(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR));
-
-
-			//cv::cvtColor(image, image, cv::COLOR_RGB2BGR);
-
-			CALL(
-				glTexImage2D(
-					GL_TEXTURE_2D,       // Type of texture
-					0,                   // Pyramid level (for mip-mapping) - 0 is the top level
-					GL_RGBA,             // Internal colour format to convert to
-					image.cols,          // Image width  i.e. 640 for Kinect in standard mode
-					image.rows,          // Image height i.e. 480 for Kinect in standard mode
-					0,                   // Border width in pixels (can either be 1 or 0)
-					GL_RGBA,             // Input image format (i.e. GL_RGB, GL_RGBA, GL_BGR etc.)
-					GL_UNSIGNED_BYTE,    // Image data type
-					image.ptr()          // The actual image data itself
-				));
-			CALL(glBindTexture(GL_TEXTURE_2D, 0));
-		}
 	}
 
 	bool BackgroundFilter::GlSetup(const int mask_channel)
@@ -479,6 +310,16 @@ namespace BackInfi
 		std::shared_ptr<BackInfi::IndexBuffer> indexBuffer = BackInfi::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t));
 		m_VertexBuffer->SetIndexBuffer(indexBuffer);
 
+		BackInfi::FrameBufferSpecs specs;
+		specs.Size          = width * height * 3;
+		specs.Width         = width;
+		specs.Height        = height;
+		specs.Samples       = 4;
+		specs.TextureFormat = TexFormat::RGB8;
+		specs.TextureFilter = { TexFilterFormat::Linear, TexFilterFormat::LinearMipMapLinear };
+		specs.TextureWrap   = { TexWrapFormat::ClampToEdge, TexWrapFormat::ClampToEdge };
+		m_FrameBuffer       = BackInfi::FrameBuffer::Create(specs);
+
 		m_InputTexture      = BackInfi::Texture2D::Create({ 4, 1280, 720, true, BackInfi::ImageFormat::RGBA8 });
 		m_MaskTexture       = BackInfi::Texture2D::Create({ 1, 1280, 720, true, BackInfi::ImageFormat::R8 });
 		m_BackgroundTexture = BackInfi::Texture2D::Create({ 4, 1280, 720, true, BackInfi::ImageFormat::RGBA8 });
@@ -486,7 +327,7 @@ namespace BackInfi
 		m_Shader->Bind();
 		m_Shader->SetInt("frame1", 1);
 		m_Shader->SetInt("frame2", 2);
-		m_Shader->SetInt("mask", 3);
+		m_Shader->SetInt("mask",   3);
 
 		return true;
 	}
@@ -504,6 +345,7 @@ namespace BackInfi
 			}
 			imageRGBA = tf->inputRGBA.clone();
 		}
+		cv::flip(imageRGBA, imageRGBA, 0);
 		cv::blur(imageRGBA, background, cv::Size(19, 19));
 
 		cv::Mat mask_mat = tf->backgroundMask;
@@ -511,7 +353,8 @@ namespace BackInfi
 		// opencv part --------------------------------------------------
 
 		//cv::Mat mask_mat = tf->backgroundMask;
-		//if (mask_mat.channels() > 1) {
+		//if (mask_mat.channels() > 1)
+		//{
 		//   std::vector<cv::Mat> channels;
 		//   cv::split(mask_mat, channels);
 		//   mask_mat = channels[0];
@@ -544,13 +387,14 @@ namespace BackInfi
 
 		// testing opengl part ------------------------------------------
 
+		m_FrameBuffer->Bind();
 		RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1.0f });
 		RenderCommand::Clear();
 
 		Renderer::BeginScene();
 
 		m_MaskTexture->LoadTexture(mask_mat.data, mask_mat.step[0] * mask_mat.rows);
-		m_InputTexture->LoadTexture(tf->inputRGBA.data, tf->inputRGBA.step[0] * tf->inputRGBA.rows);
+		m_InputTexture->LoadTexture(imageRGBA.data, imageRGBA.step[0] * imageRGBA.rows);
 		m_BackgroundTexture->LoadTexture(background.data, background.step[0] * background.rows);
 
 		m_InputTexture->Bind(1);
@@ -558,9 +402,18 @@ namespace BackInfi
 		m_MaskTexture->Bind(3);
 		Renderer::Submit(m_Shader, m_VertexBuffer);
 
-		cv::Mat output_mat = BufferToMat();
+		cv::Mat output_mat(
+			m_FrameBuffer->GetSpecs().Height,
+			m_FrameBuffer->GetSpecs().Width,
+			CV_8UC3,
+			m_FrameBuffer->ReadPixels(0, 0, 0)
+		);
+		cv::cvtColor(output_mat, output_mat, cv::COLOR_RGB2BGR);
+		cv::flip(output_mat, output_mat, 0);
 
 		Renderer::EndScene();
+
+		m_FrameBuffer->UnBind();
 
 		// end of testing opengl part -----------------------------------
 
