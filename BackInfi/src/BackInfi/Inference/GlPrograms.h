@@ -57,11 +57,9 @@ const std::string kFragmentBackground = R"(
 		float maskValue = texture(mask, sample_coordinate).r;
 		vec3 maskTexture = vec3(maskValue);
 
-		vec3 outputRGB;
 		float a = (1.0 - maskTexture.r) * inputRGBA.a;
 		// Because of output type I want to get back
-		outputRGB.bgr = inputRGBA.rgb * a + texture(frame2, sample_coordinate).bgr * (1.0 - a);
-		frag_out = outputRGB;
+		frag_out = inputRGBA.rgb * a + texture(frame2, sample_coordinate).bgr * (1.0 - a);
 	}
 )";
 
