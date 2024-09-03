@@ -1,10 +1,9 @@
-#ifndef MODEL_H_
-#define MODEL_H_
+#pragma once
+
+#include "BackInfi/Core/Base.h"
 
 #include <onnxruntime_cxx_api.h>
-
 #include <opencv2/imgproc/imgproc.hpp>
-#include <algorithm>
 
 namespace BackInfi
 {
@@ -99,7 +98,6 @@ namespace BackInfi
 			SOFTMAX = 2
 		};
 
-
 	public:
 		Model();
 		virtual ~Model() = default;
@@ -124,8 +122,7 @@ namespace BackInfi
 
 		virtual void GetNetworkInputSize(
 			const std::vector<std::vector<int64_t>>& inputDims,
-			uint32_t& inputWidth,
-			uint32_t& inputHeight);
+			cv::Size& size);
 
 		virtual void PrepareInputToNetwork(
 			cv::Mat& resizedImage,
@@ -175,8 +172,7 @@ namespace BackInfi
 
 		virtual void GetNetworkInputSize(
 			const std::vector<std::vector<int64_t>>& inputDims,
-			uint32_t& inputWidth,
-			uint32_t& inputHeight) override;
+			cv::Size& size) override;
 
 		virtual cv::Mat GetNetworkOutput(
 			const Activation& activation,
@@ -190,5 +186,3 @@ namespace BackInfi
 	};
 
 }
-
-#endif
