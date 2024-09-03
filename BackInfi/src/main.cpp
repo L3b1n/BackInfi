@@ -26,13 +26,27 @@ int main()
 	cv::namedWindow("Background remove app", cv::WINDOW_NORMAL);
 	cv::resizeWindow("Background remove app", width, height);
 
-	BackInfi::BackgroundFilter filter(height, width);
-	filter.filterUpdate(true);
-	filter.filterActivate();
-	//filter.loadBackground("background.jpg");
+	BackInfi::BackgroundFilter filter;
+	filter.SetUp(height, width, false);
 
-	const auto mask_channel = 1;
-	filter.GlSetup(mask_channel);
+	BackInfi::Settings settings;
+	settings.UseFloatMask             = true;
+	settings.EnableThreshold          = true;
+	settings.EnableImageSimilarity    = true;
+	settings.Threshold                = 0.9f;
+	settings.ImageSimilarityThreshold = 35.0f;
+	settings.TemporalSmoothFactor     = 0.85f;
+	settings.Feather                  = 0.025f;
+	//m_settings.m_smoothContour			  = 0.25f;
+	settings.Model                    = MODEL_MEDIAPIPE;
+	settings.NumThreads               = 1;
+	settings.BlurBackground           = false ? 6 : 0;
+
+	filter.FilterUpdate(settings);
+	filter.FilterActivate();
+	//filter.LoadBackground("background.jpg");
+
+	filter.GlSetup();
 
 	int frames = 0;
 	double fps = 0.0;
@@ -45,15 +59,12 @@ int main()
 		cv::Mat temp;
 		cap >> temp;
 
-		// processInput(window);
+		filter.FilterVideoTick(temp);
+		//filter.BlendSegmentationSmoothing(0.98);
+		cv::Mat frame = filter.BlendBackgroundAndForeground(temp);
 
-		filter.filterVideoTick(temp.rows, temp.cols, temp.type(), temp.data);
-		filter.blendSegmentationSmoothing(0.98);
-		cv::Mat frame = filter.blendBackgroundAndForeground();
-        
-		//unsigned char* data = (unsigned char*)malloc(sizeof(unsigned char) * 1920 * 1080 * 4);
-		//filter.blendBackgroundAndForeground(data);
-		//cv::Mat frame(temp.size(), temp.type(), data);
+		//cv::Mat frame = filter.GetMask();
+
 		Window->OnUpdate();
 
 		frames++;
