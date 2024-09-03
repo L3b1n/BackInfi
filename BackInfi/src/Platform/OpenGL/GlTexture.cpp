@@ -82,7 +82,7 @@ namespace BackInfi
 
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 		glTexImage2D(
 			GL_TEXTURE_2D,                                // Type of texture
@@ -91,10 +91,10 @@ namespace BackInfi
 			m_Width,                                      // Image width i.e. width member of BackgroundFilter in standard mode
 			m_Height,                                     // Image height i.e. height member of BackgroundFilter in standard mode
 			0,                                            // Border width in pixels (can either be 1 or 0)
-			m_DataFormat,                                 // Input image format (i.e. GL_RGB, GL_RGBA, GL_BGR etc.)
+			m_DataFormat,                                 // Input image format (i.e. GL_RED, GL_RGB, GL_RGBA, GL_BGR etc.)
 			m_DataFormat 
 				== GL_RED ? GL_FLOAT : GL_UNSIGNED_BYTE,  // Image data type
-			nullptr                                       // Here I provide nullptr, because I just want to create texture. Data binds in BindTexture
+			nullptr                                       // Here I provide nullptr, because I just want to create texture. Data binds in LoadTexture
 		);
 
 		glBindTexture(GL_TEXTURE_2D, 0);
@@ -121,7 +121,7 @@ namespace BackInfi
 			0,                                         // Specifies a texel offset in the y direction within the texture array
 			m_Width,                                   // Image width
 			m_Height,                                  // Image height
-			m_DataFormat,                              // Input image format (i.e. GL_RGB, GL_RGBA, GL_BGR etc.)
+			m_DataFormat,                              // Input image format (i.e. GL_RED, GL_RGB, GL_RGBA, GL_BGR etc.)
 			m_DataFormat == 
 				GL_RED ? GL_FLOAT : GL_UNSIGNED_BYTE,  // Image data type
 			data                                       // The actual image data itself
