@@ -19,6 +19,7 @@
 #include "BackInfi/Renderer/Buffer.h"
 #include "BackInfi/Renderer/Texture.h"
 #include "BackInfi/Renderer/Renderer.h"
+#include "BackInfi/Renderer/FrameBuffer.h"
 #include "BackInfi/Renderer/VertexArray.h"
 
 #include "BackInfi/Inference/FilterData.h"
@@ -30,8 +31,7 @@ namespace BackInfi
 	class BackgroundFilter
 	{
 	public:	
-		BackgroundFilter()
-		{
+		BackgroundFilter() {
 			tf = new BackgroundRemovalFilter();
 			std::string instanceName{"background-removal-inference"};
 			tf->env.reset(new Ort::Env(OrtLoggingLevel::ORT_LOGGING_LEVEL_ERROR, instanceName.c_str()));
@@ -54,8 +54,7 @@ namespace BackInfi
 
 		void filterDeactivate() { tf->isDisabled = true; }
 
-		void loadBackground(const std::string path)
-		{
+		void loadBackground(const std::string path) {
 			std::string backgroundImagePath = std::filesystem::current_path().append(path).string();
 			background = cv::imread(backgroundImagePath);
 			cv::resize(background, background, cv::Size(width, height));
@@ -93,6 +92,7 @@ namespace BackInfi
 
 		std::shared_ptr<BackInfi::Shader>      m_Shader;
 
+		std::shared_ptr<BackInfi::FrameBuffer> m_FrameBuffer;
 		std::shared_ptr<BackInfi::VertexArray> m_VertexBuffer;
 
 		std::shared_ptr<BackInfi::Texture>     m_MaskTexture;
@@ -101,7 +101,6 @@ namespace BackInfi
 
 		cv::Mat BufferToMat();
 		cv::Mat TextureToMat(GLuint texture_id);
-		void BindCVMatToGLTexture(cv::Mat& image, GLuint& imageTexture);
 
 		void processImageForBackground(const cv::Mat& imageBGRA, cv::Mat& backgroundMask);
 
