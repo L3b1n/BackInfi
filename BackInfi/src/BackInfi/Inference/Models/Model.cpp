@@ -132,11 +132,11 @@ namespace BackInfi
 
 	void Model::GetNetworkInputSize(
 		const std::vector<std::vector<int64_t>>& inputDims,
-		uint32_t& inputWidth, uint32_t& inputHeight)
+		cv::Size& size)
 	{
 		// BHWC
-		inputWidth = (int)inputDims[0][2];
-		inputHeight = (int)inputDims[0][1];
+		size.width  = (int)inputDims[0][2];
+		size.height = (int)inputDims[0][1];
 	}
 
 	void Model::PrepareInputToNetwork(
@@ -245,12 +245,11 @@ namespace BackInfi
 
 	void ModelBCHW::GetNetworkInputSize(
 		const std::vector<std::vector<int64_t>>& inputDims,
-		uint32_t& inputWidth,
-		uint32_t& inputHeight)
+		cv::Size& size)
 	{
 		// BCHW
-		inputWidth = (int)inputDims[0][3];
-		inputHeight = (int)inputDims[0][2];
+		size.width  = (int)inputDims[0][3];
+		size.height = (int)inputDims[0][2];
 	}
 
 	cv::Mat ModelBCHW::GetNetworkOutput(
