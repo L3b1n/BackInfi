@@ -80,7 +80,6 @@ namespace BackInfi
 		std::string backgroundImagePath = std::filesystem::current_path().append(path).string();
 		m_Background = cv::imread(backgroundImagePath);
 		cv::resize(m_Background, m_Background, cv::Size(m_Width, m_Height));
-		cv::cvtColor(m_Background, m_Background, cv::COLOR_BGR2RGBA);
 		cv::flip(m_Background, m_Background, 0);
 	}
 
@@ -115,19 +114,23 @@ namespace BackInfi
 			m_Filter->UseGPU = newUseGpu;
 			m_Filter->NumThreads = newNumThreads;
 
-			if (m_Filter->ModelSelection == MODEL_SINET) {
+			if (m_Filter->ModelSelection == MODEL_SINET)
+			{
 				m_Filter->Model.reset(new ModelSINET);
 			}
-			if (m_Filter->ModelSelection == MODEL_SELFIE) {
+			if (m_Filter->ModelSelection == MODEL_SELFIE)
+			{
 				m_Filter->Model.reset(new ModelSelfie);
 			}
-			if (m_Filter->ModelSelection == MODEL_MEDIAPIPE) {
+			if (m_Filter->ModelSelection == MODEL_MEDIAPIPE)
+			{
 				m_Filter->Model.reset(new ModelMediapipe);
 			}
 			if (m_Filter->ModelSelection == MODEL_RVM) {
 				m_Filter->Model.reset(new ModelRVM);
 			}
-			if (m_Filter->ModelSelection == MODEL_PPHUMANSEG) {
+			if (m_Filter->ModelSelection == MODEL_PPHUMANSEG)
+			{
 				m_Filter->Model.reset(new ModelPPHumanSeg);
 			}
 
@@ -158,14 +161,14 @@ namespace BackInfi
 				return;
 			}
 
-			const unsigned char* modelWeights;
 			uint32_t modelSize;
-			//if (m_Filter->modelSelection == MODEL_SINET)
+			const BYTE* modelWeights;
+			//if (m_Filter->ModelSelection == MODEL_SINET)
 			//{
 			//    modelWeights = SINet_Softmax_simple_onnx;
 			//    modelSize    = SINet_Softmax_simple_onnx_len;
 			//}
-			//if (m_Filter->modelSelection == MODEL_SELFIE)
+			//if (m_Filter->ModelSelection == MODEL_SELFIE)
 			//{
 			//    modelWeights = selfie_segmentation_onnx;
 			//    modelSize    = selfie_segmentation_onnx_len;
@@ -173,14 +176,14 @@ namespace BackInfi
 			if (m_Filter->ModelSelection == MODEL_MEDIAPIPE)
 			{
 				modelWeights = mediapipe_onnx;
-				modelSize    = mediapipe_onnx_len;
+				modelSize = mediapipe_onnx_len;
 			}
-			//if (m_Filter->modelSelection == MODEL_RVM)
+			//if (m_Filter->ModelSelection == MODEL_RVM)
 			//{
 			//    modelWeights = rvm_mobilenetv3_fp32_onnx;
 			//    modelSize    = rvm_mobilenetv3_fp32_onnx_len;
 			//}
-			//if (m_Filter->modelSelection == MODEL_PPHUMANSEG)
+			//if (m_Filter->ModelSelection == MODEL_PPHUMANSEG)
 			//{
 			//    modelWeights = pphumanseg_fp32_onnx;
 			//    modelSize    = pphumanseg_fp32_onnx_len;
@@ -209,7 +212,7 @@ namespace BackInfi
 					}
 					#endif
 				}
-				#elif defined(BC_PLATFORM_APPLE)
+				#elif defined(BC_PLATFORM_MACOS)
 				if (m_Filter->useGPU == USEGPU_COREML)
 				{
 					uint32_t coreml_flags = 0;
