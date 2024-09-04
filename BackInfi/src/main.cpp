@@ -5,16 +5,24 @@
 
 #include "BackInfi/Core/Window.h"
 
+#include "BackInfi/Events/Event.h"
+
 #include "BackInfi/Inference/BackgroundFilter.h"
 
 const int width = 1280;
 const int height = 720;
+
+void OnEvent(BackInfi::Event& e)
+{
+	BC_CORE_INFO("{0}", e.ToString());
+}
 
 int main()
 {
 	BackInfi::Logger::Init();
 	
 	std::unique_ptr<BackInfi::Window> Window = BackInfi::Window::Create(BackInfi::WindowProp("Test"));
+	Window->SetEventCallback(OnEvent);
 
 	// To make sure the program does not quit running
 	cv::VideoCapture cap;
