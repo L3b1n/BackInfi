@@ -1,6 +1,5 @@
 #pragma once
 
-#include "BackInfi/Core/Base.h"
 #include "BackInfi/Core/Window.h"
 
 #include "BackInfi/Renderer/GraphicsContext.h"
@@ -21,7 +20,7 @@ namespace BackInfi
 		virtual uint32_t GetWidth() const override { return m_Info.Width; }
 		virtual uint32_t GetHeight() const override { return m_Info.Height; }
 
-		//virtual void SetEventCallback(const std::function<void(void&)>& callback) override { m_Info.EventCallback = callback; }
+		virtual void SetEventCallback(const std::function<void(Event&)>& callback) override { m_Info.EventCallback = callback; }
 		virtual void SetVSync(bool enabled) override;
 		virtual bool IsVSync() const override;
 
@@ -41,7 +40,7 @@ namespace BackInfi
 			unsigned int Width, Height;
 			bool VSync;
 
-			//std::function<void(void&)> EventCallback;
+			std::function<void(Event&)> EventCallback;
 		};
 
 		WindowInfo m_Info;
