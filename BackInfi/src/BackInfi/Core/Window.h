@@ -2,6 +2,8 @@
 
 #include "BackInfi/Core/Base.h"
 
+#include "BackInfi/Events/Event.h"
+
 namespace BackInfi
 {
 
@@ -32,7 +34,7 @@ namespace BackInfi
 		virtual uint32_t GetWidth() const = 0;
 		virtual uint32_t GetHeight() const = 0;
 
-		//virtual void SetEventCallback(const std::function<void(void&)>& callback) = 0;
+		virtual void SetEventCallback(const std::function<void(Event&)>& callback) = 0;
 		virtual void SetVSync(bool enabled) = 0;
 		virtual bool IsVSync() const = 0;
 
