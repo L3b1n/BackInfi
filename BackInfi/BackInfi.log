@@ -1,210 +1,146 @@
-[14:26:47] [info] APP: Creating window Test (1280, 720)
-[14:26:47] [info] APP: OpenGL Info:
-[14:26:47] [info] APP:   Vendor:   Parallels and Apple
-[14:26:47] [info] APP:   Renderer: Parallels using Apple M1 Max (Compat)
-[14:26:47] [info] APP:   Version:  4.1 Metal - 88.1
-[14:26:47] [info] APP: Allocated 110592 sized float-array for input 0
-[14:26:47] [info] APP: Allocated 73728 sized float-array for output 0
-[14:26:49] [info] APP: MouseMovedEvent: 1175, 621
-[14:26:50] [info] APP: MouseMovedEvent: 1175, 620
-[14:26:50] [info] APP: MouseMovedEvent: 1175, 619
-[14:26:51] [info] APP: MouseMovedEvent: 1181, 619
-[14:26:51] [info] APP: MouseMovedEvent: 1183, 619
-[14:26:51] [info] APP: MouseMovedEvent: 1185, 619
-[14:26:51] [info] APP: MouseMovedEvent: 1188, 619
-[14:26:51] [info] APP: MouseMovedEvent: 1193, 619
-[14:26:51] [info] APP: MouseMovedEvent: 1195, 619
-[14:26:51] [info] APP: MouseMovedEvent: 1198, 619
-[14:26:51] [info] APP: MouseMovedEvent: 1205, 621
-[14:26:51] [info] APP: MouseMovedEvent: 1219, 626
-[14:26:51] [info] APP: MouseMovedEvent: 1234, 634
-[14:26:51] [info] APP: MouseMovedEvent: 1240, 638
-[14:26:51] [info] APP: MouseMovedEvent: 1246, 642
-[14:26:51] [info] APP: MouseMovedEvent: 1249, 644
-[14:26:51] [info] APP: MouseMovedEvent: 1251, 646
-[14:26:51] [info] APP: MouseMovedEvent: 1254, 649
-[14:26:51] [info] APP: MouseMovedEvent: 1260, 654
-[14:26:51] [info] APP: MouseMovedEvent: 1269, 661
-[14:26:51] [info] APP: MouseMovedEvent: 1276, 667
-[14:26:52] [info] APP: MouseMovedEvent: 1279, 702
-[14:26:52] [info] APP: MouseMovedEvent: 1247, 677
-[14:26:52] [info] APP: MouseMovedEvent: 1216, 650
-[14:26:52] [info] APP: MouseMovedEvent: 1154, 605
-[14:26:52] [info] APP: MouseMovedEvent: 1136, 591
-[14:26:52] [info] APP: MouseMovedEvent: 1125, 582
-[14:26:52] [info] APP: MouseMovedEvent: 1115, 575
-[14:26:52] [info] APP: MouseMovedEvent: 1103, 565
-[14:26:52] [info] APP: MouseMovedEvent: 1101, 562
-[14:26:52] [info] APP: MouseMovedEvent: 1099, 561
-[14:26:52] [info] APP: MouseMovedEvent: 1098, 560
-[14:26:52] [info] APP: MouseMovedEvent: 1097, 560
-[14:26:52] [info] APP: MouseMovedEvent: 1096, 559
-[14:26:52] [info] APP: MouseButtonPressedEvent: 0
-[14:26:54] [info] APP: MouseButtonReleasedEvent: 0
-[14:26:55] [info] APP: MouseButtonPressedEvent: 0
-[14:26:55] [info] APP: MouseButtonReleasedEvent: 0
-[14:26:55] [info] APP: MouseButtonPressedEvent: 0
-[14:26:55] [info] APP: MouseButtonReleasedEvent: 0
-[14:26:56] [info] APP: KeyPressedEvent: 32 (repeat = 0)
-[14:26:56] [info] APP: KeyTypedEvent: 32
-[14:26:56] [info] APP: KeyReleasedEvent: 32
-[14:26:56] [info] APP: KeyPressedEvent: 32 (repeat = 0)
-[14:26:56] [info] APP: KeyTypedEvent: 32
-[14:26:56] [info] APP: KeyReleasedEvent: 32
-[14:26:57] [info] APP: KeyPressedEvent: 32 (repeat = 0)
-[14:26:57] [info] APP: KeyTypedEvent: 32
-[14:26:57] [info] APP: KeyReleasedEvent: 32
-[14:26:58] [info] APP: KeyPressedEvent: 32 (repeat = 0)
-[14:26:58] [info] APP: KeyTypedEvent: 32
-[14:26:58] [info] APP: KeyReleasedEvent: 32
-[14:26:58] [info] APP: KeyPressedEvent: 32 (repeat = 0)
-[14:26:58] [info] APP: KeyTypedEvent: 32
-[14:26:58] [info] APP: KeyReleasedEvent: 32
-[14:26:59] [info] APP: KeyPressedEvent: 76 (repeat = 0)
-[14:26:59] [info] APP: KeyTypedEvent: 108
-[14:26:59] [info] APP: KeyPressedEvent: 83 (repeat = 0)
-[14:26:59] [info] APP: KeyTypedEvent: 115
-[14:26:59] [info] APP: KeyPressedEvent: 86 (repeat = 0)
-[14:26:59] [info] APP: KeyTypedEvent: 118
-[14:26:59] [info] APP: KeyReleasedEvent: 86
-[14:26:59] [info] APP: KeyReleasedEvent: 76
-[14:26:59] [info] APP: KeyPressedEvent: 77 (repeat = 0)
-[14:26:59] [info] APP: KeyTypedEvent: 109
-[14:26:59] [info] APP: KeyReleasedEvent: 83
-[14:26:59] [info] APP: KeyPressedEvent: 86 (repeat = 0)
-[14:26:59] [info] APP: KeyTypedEvent: 118
-[14:26:59] [info] APP: KeyPressedEvent: 76 (repeat = 0)
-[14:26:59] [info] APP: KeyTypedEvent: 108
-[14:26:59] [info] APP: KeyPressedEvent: 83 (repeat = 0)
-[14:26:59] [info] APP: KeyTypedEvent: 115
-[14:26:59] [info] APP: KeyReleasedEvent: 86
-[14:26:59] [info] APP: KeyReleasedEvent: 83
-[14:26:59] [info] APP: KeyReleasedEvent: 76
-[14:26:59] [info] APP: KeyPressedEvent: 86 (repeat = 0)
-[14:26:59] [info] APP: KeyTypedEvent: 118
-[14:26:59] [info] APP: KeyPressedEvent: 59 (repeat = 0)
-[14:26:59] [info] APP: KeyTypedEvent: 59
-[14:26:59] [info] APP: KeyReleasedEvent: 77
-[14:26:59] [info] APP: KeyPressedEvent: 76 (repeat = 0)
-[14:26:59] [info] APP: KeyTypedEvent: 108
-[14:26:59] [info] APP: KeyReleasedEvent: 86
-[14:26:59] [info] APP: KeyPressedEvent: 83 (repeat = 0)
-[14:26:59] [info] APP: KeyTypedEvent: 115
-[14:26:59] [info] APP: KeyPressedEvent: 68 (repeat = 0)
-[14:26:59] [info] APP: KeyTypedEvent: 100
-[14:27:00] [info] APP: KeyReleasedEvent: 68
-[14:27:00] [info] APP: KeyReleasedEvent: 76
-[14:27:00] [info] APP: KeyReleasedEvent: 59
-[14:27:00] [info] APP: KeyPressedEvent: 77 (repeat = 0)
-[14:27:00] [info] APP: KeyTypedEvent: 109
-[14:27:00] [info] APP: KeyPressedEvent: 44 (repeat = 0)
-[14:27:00] [info] APP: KeyTypedEvent: 44
-[14:27:00] [info] APP: KeyPressedEvent: 86 (repeat = 0)
-[14:27:00] [info] APP: KeyTypedEvent: 118
-[14:27:00] [info] APP: KeyReleasedEvent: 83
-[14:27:00] [info] APP: KeyReleasedEvent: 44
-[14:27:00] [info] APP: KeyPressedEvent: 59 (repeat = 0)
-[14:27:00] [info] APP: KeyTypedEvent: 59
-[14:27:00] [info] APP: KeyPressedEvent: 76 (repeat = 0)
-[14:27:00] [info] APP: KeyTypedEvent: 108
-[14:27:00] [info] APP: KeyReleasedEvent: 77
-[14:27:00] [info] APP: KeyReleasedEvent: 76
-[14:27:00] [info] APP: KeyReleasedEvent: 86
-[14:27:00] [info] APP: KeyReleasedEvent: 59
-[14:27:01] [info] APP: KeyPressedEvent: 77 (repeat = 0)
-[14:27:01] [info] APP: KeyTypedEvent: 109
-[14:27:01] [info] APP: KeyReleasedEvent: 77
-[14:27:01] [info] APP: KeyPressedEvent: 77 (repeat = 0)
-[14:27:01] [info] APP: KeyTypedEvent: 109
-[14:27:01] [info] APP: KeyReleasedEvent: 77
-[14:27:01] [info] APP: KeyPressedEvent: 77 (repeat = 0)
-[14:27:01] [info] APP: KeyTypedEvent: 109
-[14:27:01] [info] APP: KeyReleasedEvent: 77
-[14:27:01] [info] APP: KeyPressedEvent: 77 (repeat = 0)
-[14:27:01] [info] APP: KeyTypedEvent: 109
-[14:27:01] [info] APP: KeyReleasedEvent: 77
-[14:27:02] [info] APP: KeyPressedEvent: 77 (repeat = 0)
-[14:27:02] [info] APP: KeyTypedEvent: 109
-[14:27:02] [info] APP: KeyReleasedEvent: 77
-[14:27:02] [info] APP: KeyPressedEvent: 77 (repeat = 0)
-[14:27:02] [info] APP: KeyTypedEvent: 109
-[14:27:02] [info] APP: KeyReleasedEvent: 77
-[14:27:02] [info] APP: KeyPressedEvent: 77 (repeat = 0)
-[14:27:02] [info] APP: KeyTypedEvent: 109
-[14:27:02] [info] APP: KeyReleasedEvent: 77
-[14:27:03] [info] APP: KeyPressedEvent: 77 (repeat = 0)
-[14:27:03] [info] APP: KeyTypedEvent: 109
-[14:27:03] [info] APP: KeyReleasedEvent: 77
-[14:27:03] [info] APP: KeyPressedEvent: 77 (repeat = 0)
-[14:27:03] [info] APP: KeyTypedEvent: 109
-[14:27:03] [info] APP: KeyReleasedEvent: 77
-[14:27:03] [info] APP: KeyPressedEvent: 77 (repeat = 0)
-[14:27:03] [info] APP: KeyTypedEvent: 109
-[14:27:03] [info] APP: KeyReleasedEvent: 77
-[14:27:03] [info] APP: KeyPressedEvent: 77 (repeat = 0)
-[14:27:03] [info] APP: KeyTypedEvent: 109
-[14:27:04] [info] APP: KeyReleasedEvent: 77
-[14:27:04] [info] APP: KeyPressedEvent: 77 (repeat = 0)
-[14:27:04] [info] APP: KeyTypedEvent: 109
-[14:27:04] [info] APP: KeyReleasedEvent: 77
-[14:27:05] [info] APP: KeyPressedEvent: 77 (repeat = 0)
-[14:27:05] [info] APP: KeyTypedEvent: 109
-[14:27:06] [info] APP: KeyPressedEvent: 77 (repeat = 1)
-[14:27:06] [info] APP: KeyTypedEvent: 109
-[14:27:06] [info] APP: KeyPressedEvent: 77 (repeat = 1)
-[14:27:06] [info] APP: KeyTypedEvent: 109
-[14:27:06] [info] APP: KeyPressedEvent: 77 (repeat = 1)
-[14:27:06] [info] APP: KeyTypedEvent: 109
-[14:27:06] [info] APP: KeyPressedEvent: 77 (repeat = 1)
-[14:27:06] [info] APP: KeyTypedEvent: 109
-[14:27:06] [info] APP: KeyPressedEvent: 77 (repeat = 1)
-[14:27:06] [info] APP: KeyTypedEvent: 109
-[14:27:06] [info] APP: KeyPressedEvent: 77 (repeat = 1)
-[14:27:06] [info] APP: KeyTypedEvent: 109
-[14:27:06] [info] APP: KeyPressedEvent: 77 (repeat = 1)
-[14:27:06] [info] APP: KeyTypedEvent: 109
-[14:27:06] [info] APP: KeyPressedEvent: 77 (repeat = 1)
-[14:27:06] [info] APP: KeyTypedEvent: 109
-[14:27:06] [info] APP: KeyPressedEvent: 77 (repeat = 1)
-[14:27:06] [info] APP: KeyTypedEvent: 109
-[14:27:06] [info] APP: KeyPressedEvent: 77 (repeat = 1)
-[14:27:06] [info] APP: KeyTypedEvent: 109
-[14:27:06] [info] APP: KeyPressedEvent: 77 (repeat = 1)
-[14:27:06] [info] APP: KeyTypedEvent: 109
-[14:27:06] [info] APP: KeyPressedEvent: 77 (repeat = 1)
-[14:27:06] [info] APP: KeyTypedEvent: 109
-[14:27:06] [info] APP: KeyPressedEvent: 77 (repeat = 1)
-[14:27:06] [info] APP: KeyTypedEvent: 109
-[14:27:06] [info] APP: KeyPressedEvent: 77 (repeat = 1)
-[14:27:06] [info] APP: KeyTypedEvent: 109
-[14:27:06] [info] APP: KeyPressedEvent: 77 (repeat = 1)
-[14:27:06] [info] APP: KeyTypedEvent: 109
-[14:27:06] [info] APP: KeyPressedEvent: 77 (repeat = 1)
-[14:27:06] [info] APP: KeyTypedEvent: 109
-[14:27:06] [info] APP: KeyPressedEvent: 77 (repeat = 1)
-[14:27:06] [info] APP: KeyTypedEvent: 109
-[14:27:06] [info] APP: KeyPressedEvent: 77 (repeat = 1)
-[14:27:06] [info] APP: KeyTypedEvent: 109
-[14:27:06] [info] APP: KeyPressedEvent: 77 (repeat = 1)
-[14:27:06] [info] APP: KeyTypedEvent: 109
-[14:27:06] [info] APP: KeyPressedEvent: 77 (repeat = 1)
-[14:27:06] [info] APP: KeyTypedEvent: 109
-[14:27:06] [info] APP: KeyPressedEvent: 77 (repeat = 1)
-[14:27:06] [info] APP: KeyTypedEvent: 109
-[14:27:06] [info] APP: KeyPressedEvent: 77 (repeat = 1)
-[14:27:06] [info] APP: KeyTypedEvent: 109
-[14:27:06] [info] APP: KeyPressedEvent: 77 (repeat = 1)
-[14:27:06] [info] APP: KeyTypedEvent: 109
-[14:27:06] [info] APP: KeyPressedEvent: 77 (repeat = 1)
-[14:27:06] [info] APP: KeyTypedEvent: 109
-[14:27:06] [info] APP: KeyPressedEvent: 77 (repeat = 1)
-[14:27:06] [info] APP: KeyTypedEvent: 109
-[14:27:06] [info] APP: KeyReleasedEvent: 77
-[14:27:08] [info] APP: MouseMovedEvent: 1094, 561
-[14:27:08] [info] APP: MouseMovedEvent: 1094, 562
-[14:27:08] [info] APP: MouseMovedEvent: 1114, 564
-[14:27:08] [info] APP: MouseMovedEvent: 1128, 569
-[14:27:08] [info] APP: MouseMovedEvent: 1144, 578
-[14:27:08] [info] APP: MouseMovedEvent: 1208, 625
-[14:27:08] [info] APP: MouseMovedEvent: 1229, 646
-[14:27:08] [info] APP: MouseMovedEvent: 1249, 667
+[14:30:39] [info] APP: Creating window Test (1280, 720)
+[14:30:39] [info] APP: OpenGL Info:
+[14:30:39] [info] APP:   Vendor:   Parallels and Apple
+[14:30:39] [info] APP:   Renderer: Parallels using Apple M1 Max (Compat)
+[14:30:39] [info] APP:   Version:  4.1 Metal - 88.1
+[14:30:40] [info] APP: Allocated 110592 sized float-array for input 0
+[14:30:40] [info] APP: Allocated 73728 sized float-array for output 0
+[14:30:44] [info] APP: MouseMovedEvent: 1243, 271
+[14:30:44] [info] APP: MouseMovedEvent: 1201, 256
+[14:30:44] [info] APP: MouseMovedEvent: 1166, 244
+[14:30:44] [info] APP: MouseMovedEvent: 1129, 231
+[14:30:44] [info] APP: MouseMovedEvent: 1108, 224
+[14:30:44] [info] APP: MouseMovedEvent: 1098, 220
+[14:30:44] [info] APP: MouseMovedEvent: 1091, 218
+[14:30:44] [info] APP: MouseMovedEvent: 1085, 216
+[14:30:44] [info] APP: MouseMovedEvent: 1082, 214
+[14:30:44] [info] APP: MouseMovedEvent: 1077, 212
+[14:30:44] [info] APP: MouseMovedEvent: 1076, 211
+[14:30:44] [info] APP: MouseMovedEvent: 1077, 211
+[14:30:44] [info] APP: MouseMovedEvent: 1078, 211
+[14:30:44] [info] APP: MouseMovedEvent: 1079, 211
+[14:30:44] [info] APP: MouseMovedEvent: 1080, 211
+[14:30:44] [info] APP: MouseMovedEvent: 1083, 211
+[14:30:44] [info] APP: MouseMovedEvent: 1087, 213
+[14:30:44] [info] APP: MouseMovedEvent: 1099, 216
+[14:30:44] [info] APP: MouseMovedEvent: 1112, 222
+[14:30:44] [info] APP: MouseMovedEvent: 1143, 234
+[14:30:44] [info] APP: MouseMovedEvent: 1152, 237
+[14:30:44] [info] APP: MouseMovedEvent: 1167, 243
+[14:30:44] [info] APP: MouseMovedEvent: 1173, 244
+[14:30:44] [info] APP: MouseMovedEvent: 1192, 250
+[14:30:44] [info] APP: MouseMovedEvent: 1198, 252
+[14:30:44] [info] APP: MouseMovedEvent: 1202, 253
+[14:30:44] [info] APP: MouseMovedEvent: 1204, 253
+[14:30:44] [info] APP: MouseMovedEvent: 1207, 254
+[14:30:45] [info] APP: MouseMovedEvent: 1208, 254
+[14:30:45] [info] APP: MouseMovedEvent: 1206, 254
+[14:30:45] [info] APP: MouseMovedEvent: 1205, 254
+[14:30:45] [info] APP: MouseMovedEvent: 1204, 254
+[14:30:45] [info] APP: MouseMovedEvent: 1203, 254
+[14:30:45] [info] APP: MouseMovedEvent: 1202, 254
+[14:30:45] [info] APP: MouseMovedEvent: 1201, 254
+[14:30:45] [info] APP: MouseMovedEvent: 1199, 253
+[14:30:45] [info] APP: MouseMovedEvent: 1198, 253
+[14:30:45] [info] APP: MouseMovedEvent: 1197, 253
+[14:30:45] [info] APP: MouseButtonPressedEvent: 0
+[14:30:45] [info] APP: MouseMovedEvent: 1196, 253
+[14:30:46] [info] APP: MouseButtonReleasedEvent: 0
+[14:30:46] [info] APP: MouseMovedEvent: 1197, 261
+[14:30:46] [info] APP: MouseMovedEvent: 1204, 277
+[14:30:46] [info] APP: MouseMovedEvent: 1214, 304
+[14:30:46] [info] APP: MouseMovedEvent: 1235, 352
+[14:30:46] [info] APP: MouseMovedEvent: 1259, 406
+[14:30:47] [info] APP: MouseMovedEvent: 1279, 713
+[14:30:47] [info] APP: MouseMovedEvent: 1279, 714
+[14:30:47] [info] APP: MouseMovedEvent: 1278, 715
+[14:30:47] [info] APP: MouseMovedEvent: 1278, 716
+[14:30:47] [info] APP: MouseMovedEvent: 1277, 717
+[14:30:47] [info] APP: MouseMovedEvent: 1276, 717
+[14:30:48] [info] APP: MouseMovedEvent: 1276, 716
+[14:30:48] [info] APP: MouseMovedEvent: 1276, 715
+[14:30:48] [info] APP: MouseMovedEvent: 1276, 714
+[14:30:48] [info] APP: MouseMovedEvent: 1276, 713
+[14:30:48] [info] APP: MouseMovedEvent: 1276, 712
+[14:30:48] [info] APP: MouseMovedEvent: 1276, 710
+[14:30:48] [info] APP: MouseMovedEvent: 1276, 709
+[14:30:48] [info] APP: MouseMovedEvent: 1276, 708
+[14:30:48] [info] APP: MouseMovedEvent: 1275, 709
+[14:30:48] [info] APP: MouseMovedEvent: 1274, 710
+[14:30:48] [info] APP: MouseMovedEvent: 1272, 711
+[14:30:48] [info] APP: MouseMovedEvent: 1271, 711
+[14:30:48] [info] APP: MouseMovedEvent: 1270, 711
+[14:30:48] [info] APP: MouseMovedEvent: 1270, 712
+[14:30:48] [info] APP: MouseMovedEvent: 1270, 710
+[14:30:48] [info] APP: MouseMovedEvent: 1270, 708
+[14:30:48] [info] APP: MouseMovedEvent: 1272, 698
+[14:30:48] [info] APP: MouseMovedEvent: 1273, 695
+[14:30:48] [info] APP: MouseMovedEvent: 1274, 690
+[14:30:48] [info] APP: MouseMovedEvent: 1277, 684
+[14:30:48] [info] APP: MouseMovedEvent: 1279, 679
+[14:30:49] [info] APP: WindowResizeEvent: 1282, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1286, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1292, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1309, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1324, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1342, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1364, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1387, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1413, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1440, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1491, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1516, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1542, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1565, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1580, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1593, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1611, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1635, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1649, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1671, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1680, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1689, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1696, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1702, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1706, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1710, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1712, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1713, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1714, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1713, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1712, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1711, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1710, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1708, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1707, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1705, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1703, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1701, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1697, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1693, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1687, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1678, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1661, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1635, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1611, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1574, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1524, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1487, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1434, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1381, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1346, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1306, 720
+[14:30:49] [info] APP: WindowResizeEvent: 1280, 720
+[14:30:50] [info] APP: WindowResizeEvent: 1252, 720
+[14:30:50] [info] APP: WindowResizeEvent: 1238, 720
+[14:30:50] [info] APP: WindowResizeEvent: 1225, 720
+[14:30:50] [info] APP: WindowResizeEvent: 1215, 720
+[14:30:50] [info] APP: WindowResizeEvent: 1207, 720
+[14:30:50] [info] APP: WindowResizeEvent: 1203, 720
+[14:30:50] [info] APP: WindowResizeEvent: 1201, 720
+[14:30:50] [info] APP: WindowResizeEvent: 1199, 720
+[14:30:50] [info] APP: WindowResizeEvent: 1198, 720
+[14:30:50] [info] APP: WindowResizeEvent: 1199, 720
+[14:30:50] [info] APP: WindowResizeEvent: 1200, 720
+[14:30:50] [info] APP: WindowResizeEvent: 1201, 720
+[14:30:50] [info] APP: WindowResizeEvent: 1202, 720
