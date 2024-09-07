@@ -3,10 +3,12 @@
 #include <glad/glad.h>
 #include <opencv2/opencv.hpp>
 
+#include "BackInfi/Core/Layer.h"
 #include "BackInfi/Core/Window.h"
 
 #include "BackInfi/Events/Event.h"
 
+#include "BackInfi/Inference/InferenceLayer.h"
 #include "BackInfi/Inference/BackgroundFilter.h"
 
 const int width = 1280;
@@ -21,6 +23,8 @@ int main()
 {
 	BackInfi::Logger::Init();
 	
+	BackInfi::LayerStack m_LayerStack;
+
 	std::unique_ptr<BackInfi::Window> Window = BackInfi::Window::Create(BackInfi::WindowProp("Test"));
 	Window->SetEventCallback(OnEvent);
 
@@ -34,27 +38,27 @@ int main()
 	cv::namedWindow("Background remove app", cv::WINDOW_NORMAL);
 	cv::resizeWindow("Background remove app", width, height);
 
-	BackInfi::BackgroundFilter filter;
-	filter.SetUp(height, width, false);
+	//BackInfi::BackgroundFilter filter;
+	//filter.SetUp(height, width, false);
 
-	BackInfi::Settings settings;
-	settings.UseFloatMask             = true;
-	settings.EnableThreshold          = true;
-	settings.EnableImageSimilarity    = true;
-	settings.Threshold                = 0.9f;
-	settings.ImageSimilarityThreshold = 35.0f;
-	settings.TemporalSmoothFactor     = 0.85f;
-	settings.Feather                  = 0.025f;
-	//m_settings.m_smoothContour			  = 0.25f;
-	settings.Model                    = MODEL_MEDIAPIPE;
-	settings.NumThreads               = 1;
-	settings.BlurBackground           = false ? 6 : 0;
+	//BackInfi::Settings settings;
+	//settings.UseFloatMask             = true;
+	//settings.EnableThreshold          = true;
+	//settings.EnableImageSimilarity    = true;
+	//settings.Threshold                = 0.9f;
+	//settings.ImageSimilarityThreshold = 35.0f;
+	//settings.TemporalSmoothFactor     = 0.85f;
+	//settings.Feather                  = 0.025f;
+	////m_settings.m_smoothContour			  = 0.25f;
+	//settings.Model                    = MODEL_MEDIAPIPE;
+	//settings.NumThreads               = 1;
+	//settings.BlurBackground           = false ? 6 : 0;
 
-	filter.FilterUpdate(settings);
-	filter.FilterActivate();
-	//filter.LoadBackground("background.jpg");
+	//filter.FilterUpdate(settings);
+	//filter.FilterActivate();
+	////filter.LoadBackground("background.jpg");
 
-	filter.GlSetup();
+	//filter.GlSetup();
 
 	int frames = 0;
 	double fps = 0.0;
@@ -62,16 +66,45 @@ int main()
 	bool load_flag = true;
 	auto start_time = std::chrono::high_resolution_clock::now();
 
+
+	BackInfi::InferenceLayer* m_InferenceLayer = new BackInfi::InferenceLayer();
+	m_LayerStack.PushLayer(m_InferenceLayer);
+	m_InferenceLayer->OnAttach();
+
+	{
+		BackInfi::InferenceSettings settings;
+		settings.UseFloatMask             = true;
+		settings.EnableThreshold          = true;
+		settings.EnableImageSimilarity    = true;
+		settings.Threshold                = 0.9f;
+		settings.ImageSimilarityThreshold = 35.0f;
+		settings.TemporalSmoothFactor     = 0.85f;
+		settings.Feather                  = 0.025f;
+		//m_settings.m_smoothContour			  = 0.25f;
+		settings.Model                    = MODEL_MEDIAPIPE;
+		settings.NumThreads               = 1;
+
+		m_InferenceLayer->UpdateSettings(settings);
+	}
+
 	while (load_flag)
 	{
 		cv::Mat temp;
 		cap >> temp;
 
-		filter.FilterVideoTick(temp);
+		//filter.FilterVideoTick(temp);
 		//filter.BlendSegmentationSmoothing(0.98);
-		cv::Mat frame = filter.BlendBackgroundAndForeground(temp);
+		//cv::Mat frame = filter.BlendBackgroundAndForeground(temp);
 
 		//cv::Mat frame = filter.GetMask();
+
+		BackInfi::TimeStep timestep;
+		m_InferenceLayer->UpdateInputImage(temp);
+
+		for (auto layer : m_LayerStack)
+			layer->OnUpdate(timestep);
+
+		cv::Mat frame = m_InferenceLayer->GetBackgroundMask();
 
 		Window->OnUpdate();
 
