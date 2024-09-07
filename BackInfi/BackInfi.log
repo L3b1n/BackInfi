@@ -1,7 +1,7 @@
-[19:27:21] [info] APP: Creating window Test (1280, 720)
-[19:27:21] [info] APP: OpenGL Info:
-[19:27:21] [info] APP:   Vendor:   Parallels and Apple
-[19:27:21] [info] APP:   Renderer: Parallels using Apple M1 Max (Compat)
-[19:27:21] [info] APP:   Version:  4.1 Metal - 88.1
-[19:27:22] [info] APP: Allocated 110592 sized float-array for input 0
-[19:27:22] [info] APP: Allocated 73728 sized float-array for output 0
+[16:12:56] [info] APP: Creating window Test (1280, 720)
+[16:12:56] [info] APP: OpenGL Info:
+[16:12:56] [info] APP:   Vendor:   Parallels and Apple
+[16:12:56] [info] APP:   Renderer: Parallels using Apple M1 Max (Compat)
+[16:12:56] [info] APP:   Version:  4.1 Metal - 88.1
+[16:12:59] [info] APP: Allocated 110592 sized float-array for input 0
+[16:12:59] [info] APP: Allocated 73728 sized float-array for output 0
