@@ -1,12 +1,3 @@
-[submodule "BackInfi/vendor/spdlog"]
-	path = BackInfi/vendor/spdlog
-	url = https://github.com/gabime/spdlog.git
-[submodule "BackInfi/vendor/GLFW"]
-	path = BackInfi/vendor/GLFW
-	url = https://github.com/L3b1n/glfw.git
-[submodule "BackInfi/vendor/glm"]
-	path = BackInfi/vendor/glm
-	url = https://github.com/g-truc/glm.git
 [submodule "BackInfi/vendor/imgui"]
 	path = BackInfi/vendor/imgui
 	url = https://github.com/L3b1n/imgui.git
