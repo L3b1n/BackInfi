@@ -4,3 +4,6 @@
 [submodule "BackInfi/vendor/GLFW"]
 	path = BackInfi/vendor/GLFW
 	url = https://github.com/L3b1n/glfw.git
+[submodule "BackInfi/vendor/glm"]
+	path = BackInfi/vendor/glm
+	url = https://github.com/g-truc/glm.git
