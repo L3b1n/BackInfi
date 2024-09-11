@@ -1,3 +1,6 @@
 [submodule "BackInfi/vendor/imgui"]
 	path = BackInfi/vendor/imgui
 	url = https://github.com/L3b1n/imgui.git
+[submodule "BackInfi/vendor/GLFW"]
+	path = BackInfi/vendor/GLFW
+	url = https://github.com/L3b1n/glfw.git
