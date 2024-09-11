@@ -7,3 +7,6 @@
 [submodule "BackInfi/vendor/glm"]
 	path = BackInfi/vendor/glm
 	url = https://github.com/g-truc/glm.git
+[submodule "BackInfi/vendor/spdlog"]
+	path = BackInfi/vendor/spdlog
+	url = https://github.com/gabime/spdlog.git
