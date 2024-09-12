@@ -1,7 +1,0 @@
-[16:40:38] [info] APP: Creating window BackInfi app (1280, 720)
-[16:40:38] [info] APP: OpenGL Info:
-[16:40:38] [info] APP:   Vendor:   Parallels and Apple
-[16:40:38] [info] APP:   Renderer: Parallels using Apple M1 Max (Compat)
-[16:40:38] [info] APP:   Version:  4.1 Metal - 88.1
-[16:40:40] [info] APP: Allocated 110592 sized float-array for input 0
-[16:40:40] [info] APP: Allocated 73728 sized float-array for output 0
