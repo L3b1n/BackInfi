@@ -1,9 +1,20 @@
-.vs
-.vscode
-bin
-bin-int
+# Binaries
+**/bin/
+**/bin-int/
+
+# BackInfi files
+**.log
+
+# Libs
 **/Lib
+
+# Visual Studio files
+.vs
+**.vscode
 **.tlog
 **.user
 **.vcxproj
 **.vcxproj.filters
+
+# Mac files
+*.DS_Store
