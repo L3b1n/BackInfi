@@ -11,10 +11,12 @@
 # Visual Studio files
 .vs
 **.vscode
+**.sln
 **.tlog
 **.user
 **.vcxproj
 **.vcxproj.filters
+**.vcxproj.user
 
 # Mac files
 *.DS_Store
