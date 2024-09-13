@@ -21,6 +21,9 @@ namespace BackInfi
 		m_Window->SetEventCallback(BC_BIND_EVENT_FN(Application::OnEvent));
 
 		Renderer::Init();
+
+		m_ImGuiLayer = new ImGuiLayerGLFWOpenGL();
+		PushOverlay(m_ImGuiLayer);
 	}
 
 	Application::~Application()
@@ -54,6 +57,11 @@ namespace BackInfi
 		}
 	}
 
+	void Application::Close()
+	{
+		m_Running = false;
+	}
+
 	void Application::Run()
 	{
 		while (m_Running)
@@ -62,8 +70,15 @@ namespace BackInfi
 			TimeStep ts = time - m_LastFrameTime;
 			m_LastFrameTime = time;
 			
-			for (Layer* layer : m_LayerStack)
+			for (auto layer : m_LayerStack)
 				layer->OnUpdate(ts);
+
+			m_ImGuiLayer->Begin();
+			{
+				for (auto layer : m_LayerStack)
+					layer->OnImGuiRender();
+			}
+			m_ImGuiLayer->End();
 
 			m_Window->OnUpdate();
 		}
