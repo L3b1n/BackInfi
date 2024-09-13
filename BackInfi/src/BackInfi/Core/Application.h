@@ -4,6 +4,8 @@
 #include "BackInfi/Core/Layer.h"
 #include "BackInfi/Core/Window.h"
 
+#include "BackInfi/ImGui/ImGuiLayerGLFWOpenGL.h"
+
 #include "BackInfi/Renderer/Renderer.h"
 
 #include "BackInfi/Events/WindowEvent.h"
@@ -22,6 +24,8 @@ namespace BackInfi
 		void PushLayer(Layer* layer);
 		void PushOverlay(Layer* layer);
 
+		void Close();
+
 		Window& GetWindow() { return *m_Window; }
 		static Application& Get() { return *s_Instance; }
 
@@ -33,12 +37,12 @@ namespace BackInfi
 	private:
 		bool m_Running;
 		float m_LastFrameTime;
-		LayerStack m_LayerStack;
 		std::unique_ptr<Window> m_Window;
+		LayerStack m_LayerStack;
+		ImGuiLayerGLFWOpenGL* m_ImGuiLayer;
 
 	private:
 		static Application* s_Instance;
-		//friend int ::main();
 	};
 
 }
