@@ -3,6 +3,7 @@ IncludeDir = {}
 IncludeDir["glm"]         = "vendor/glm"
 IncludeDir["GLFW"]        = "vendor/GLFW/include"
 IncludeDir["Glad"]        = "vendor/Glad/include"
+IncludeDir["ImGui"]       = "vendor/imgui"
 IncludeDir["Opencv"]      = "vendor/Opencv/include"
 IncludeDir["Onnxruntime"] = "vendor/Onnxruntime/include"
 
@@ -12,6 +13,7 @@ LibsDir["Onnxruntime"]    = "vendor/Onnxruntime/Lib"
 
 include "vendor/GLFW"
 include "vendor/Glad"
+include "vendor/ImGui"
 
 project "BackInfi"
 	kind "ConsoleApp"
@@ -29,6 +31,8 @@ project "BackInfi"
 	{
 		"src/**.h",
 		"src/**.cpp",
+		"Sandbox/**.h",
+		"Sandbox/**.cpp",
 		"vendor/glm/glm/**.hpp",
 		"vendor/glm/glm/**.inl"
 	}
@@ -42,10 +46,12 @@ project "BackInfi"
 	includedirs
 	{
 		"src",
+		"Sandbox",
 		"vendor/spdlog/include",
 		"%{IncludeDir.glm}",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
+		"%{IncludeDir.ImGui}",
 		"%{IncludeDir.Opencv}",
 		"%{IncludeDir.Onnxruntime}"
 	}
@@ -60,6 +66,7 @@ project "BackInfi"
 	{
 		"GLFW",
 		"Glad",
+		"ImGui",
 		"gdi32.lib",
 		"Winmm.lib",
 		"Version.lib",
