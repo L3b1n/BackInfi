@@ -81,7 +81,11 @@ project "BackInfi"
 		}
 
 	filter "configurations:Debug"
-		defines "BC_DEBUG"
+		defines
+		{
+			"BC_DEBUG",
+			"BC_PROFILE"
+		}
 		runtime "Debug"
 		symbols "on"
 
@@ -104,7 +108,11 @@ project "BackInfi"
 		}
 
 	filter "configurations:Release"
-		defines "BC_RELEASE"
+		defines
+		{
+			"BC_RELEASE",
+			"BC_PROFILE"
+		}
 		runtime "Release"
 		optimize "on"
 
