@@ -11,6 +11,8 @@ namespace BackInfi
 
 	void GlRendererAPI::Init()
 	{
+		BC_PROFILE_FUNC();
+
 	#ifdef BC_DEBUG
 		Debug::EnableGLDebugging();
 	#endif
