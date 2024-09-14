@@ -54,3 +54,4 @@
 
 #include "BackInfi/Core/Assert.h"
 #include "BackInfi/Core/Logger.h"
+#include "BackInfi/Debug/TimeInspector.h"
