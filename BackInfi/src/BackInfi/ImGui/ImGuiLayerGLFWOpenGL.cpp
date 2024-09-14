@@ -26,6 +26,8 @@ namespace BackInfi
 
 	void ImGuiLayerGLFWOpenGL::OnAttach()
 	{
+		BC_PROFILE_FUNC();
+
 		IMGUI_CHECKVERSION();
 		ImGui::CreateContext();
 		ImGuiIO& io = ImGui::GetIO(); (void)io;
@@ -52,6 +54,8 @@ namespace BackInfi
 
 	void ImGuiLayerGLFWOpenGL::OnDetach()
 	{
+		BC_PROFILE_FUNC();
+
 		ImGui_ImplOpenGL3_Shutdown();
 		ImGui_ImplGlfw_Shutdown();
 		ImGui::DestroyContext();
@@ -63,6 +67,8 @@ namespace BackInfi
 
 	void ImGuiLayerGLFWOpenGL::Begin()
 	{
+		BC_PROFILE_FUNC();
+
 		ImGui_ImplOpenGL3_NewFrame();
 		ImGui_ImplGlfw_NewFrame();
 		ImGui::NewFrame();
@@ -70,6 +76,8 @@ namespace BackInfi
 
 	void ImGuiLayerGLFWOpenGL::End()
 	{
+		BC_PROFILE_FUNC();
+
 		ImGuiIO& io      = ImGui::GetIO();
 		Application& app = Application::Get();
 		io.DisplaySize   = ImVec2((float)app.GetWindow().GetWidth(), (float)app.GetWindow().GetHeight());
