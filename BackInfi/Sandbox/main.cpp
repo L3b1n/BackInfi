@@ -26,9 +26,17 @@ int main()
 {
 	BackInfi::Logger::Init();
 
+	BC_PROFILE_BEGIN_SESSION("Startup", "BackInfi-Startup.json");
 	auto app = new BackInfiApp();
+	BC_PROFILE_END_SESSION();
+
+	BC_PROFILE_BEGIN_SESSION("Runtime", "BackInfi-Runtime.json");
 	app->Run();
+	BC_PROFILE_END_SESSION();
+
+	BC_PROFILE_BEGIN_SESSION("Shutdown", "BackInfi-Shutdown.json");
 	delete app;
+	BC_PROFILE_END_SESSION();
 
 	return 0;
 }
