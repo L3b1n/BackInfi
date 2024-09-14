@@ -46,9 +46,6 @@ namespace BackInfi
 		GLint GetUniformLocation(const std::string& name) const;
 		void CheckCompileErrors(unsigned int shader, std::string type);
 
-		std::string ReadFile(const std::string& filepath);
-		std::tuple<const char*, const char*> PreProcess(const std::string& source);
-
 	private:
 		std::string m_Name;
 		GLuint m_RendererID; // Program ID
