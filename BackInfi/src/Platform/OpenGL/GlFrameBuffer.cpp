@@ -139,6 +139,8 @@ namespace BackInfi
 
 	GlFrameBuffer::GlFrameBuffer(const FrameBufferSpecs& specs)
 	{
+		BC_PROFILE_FUNC();
+
 		m_Specs          = specs;
 		m_ColorBuffer    = nullptr;
 		m_DepthBuffer    = nullptr;
@@ -154,11 +156,15 @@ namespace BackInfi
 
 	GlFrameBuffer::~GlFrameBuffer()
 	{
+		BC_PROFILE_FUNC();
+
 		GlFrameBuffer::DeleteFrameBuffer();
 	}
 
 	void GlFrameBuffer::DeleteFrameBuffer()
 	{
+		BC_PROFILE_FUNC();
+
 		if (m_RboMsaaColorID)
 		{
 			glDeleteRenderbuffers(1, &m_RboMsaaColorID);
@@ -203,6 +209,8 @@ namespace BackInfi
 
 	void GlFrameBuffer::Invalidate()
 	{
+		BC_PROFILE_FUNC();
+
 		GlFrameBuffer::DeleteFrameBuffer();
 
 		// Check width and height
@@ -296,17 +304,23 @@ namespace BackInfi
 
 	void GlFrameBuffer::Bind() const
 	{
+		BC_PROFILE_FUNC();
+
 		glBindFramebuffer(GL_FRAMEBUFFER, m_Specs.Samples == 0 ? m_FboID : m_FboMsaaID);
 		glViewport(0, 0, m_Specs.Width, m_Specs.Height);
 	}
 
 	void GlFrameBuffer::UnBind() const
 	{
+		BC_PROFILE_FUNC();
+
 		glBindFramebuffer(GL_FRAMEBUFFER, 0);
 	}
 
 	void GlFrameBuffer::Update() const
 	{
+		BC_PROFILE_FUNC();
+
 		if (m_Specs.Samples > 0)
 		{
 			// Blit color buffer
@@ -330,9 +344,9 @@ namespace BackInfi
 		}
 
 		// Also, generate mipmaps for color buffer (texture)
-		//glBindTexture(GL_TEXTURE_2D, m_TexID);
-		//glGenerateMipmap(GL_TEXTURE_2D);
-		//glBindTexture(GL_TEXTURE_2D, 0);
+		glBindTexture(GL_TEXTURE_2D, m_TexID);
+		glGenerateMipmap(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D, 0);
 	}
 
 	void GlFrameBuffer::BlitColorTo(
@@ -340,6 +354,8 @@ namespace BackInfi
 		int x, int y,
 		int width, int height) const
 	{
+		BC_PROFILE_FUNC();
+
 		// If width/height not specified, use src dimension
 		if (width == 0) width = m_Specs.Width;
 		if (height == 0) height = m_Specs.Height;
@@ -360,6 +376,8 @@ namespace BackInfi
 		int x, int y,
 		int width, int height) const
 	{
+		BC_PROFILE_FUNC();
+
 		// If width/height not specified, use src dimension
 		if (width == 0) width = m_Specs.Width;
 		if (height == 0) height = m_Specs.Height;
@@ -379,6 +397,8 @@ namespace BackInfi
 
 	void GlFrameBuffer::Resize(uint32_t height, uint32_t width)
 	{
+		BC_PROFILE_FUNC();
+
 		if (width == 0 || height == 0 || width > s_MaxFramebufferSize || height > s_MaxFramebufferSize)
 		{
 			BC_CORE_WARN("Attempted to rezize framebuffer to {0}, {1}", width, height);
@@ -392,6 +412,8 @@ namespace BackInfi
 
 	BYTE* GlFrameBuffer::ReadPixels(uint32_t attachmentIndex, int x, int y)
 	{
+		BC_PROFILE_FUNC();
+
 		//Update();
 		if (m_Specs.Samples > 0)
 		{
