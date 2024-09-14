@@ -17,6 +17,8 @@ namespace BackInfi
 
 	void GlContext::Init()
 	{
+		BC_PROFILE_FUNC();
+
 		glfwMakeContextCurrent(m_WindowHandle);
 		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 		BC_CORE_ASSERT(status, "Failed to initialize Glad!");
@@ -31,6 +33,8 @@ namespace BackInfi
 
 	void GlContext::SwapBuffers()
 	{
+		BC_PROFILE_FUNC();
+
 		glfwSwapBuffers(m_WindowHandle);
 	}
 
