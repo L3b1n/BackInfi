@@ -20,16 +20,22 @@ namespace BackInfi
 
 	WindowsWindow::WindowsWindow(const WindowProp& prop)
 	{
+		BC_PROFILE_FUNC();
+
 		Init(prop);
 	}
 
 	WindowsWindow::~WindowsWindow()
 	{
+		BC_PROFILE_FUNC();
+
 		ShutDown();
 	}
 
 	void WindowsWindow::Init(const WindowProp& prop)
 	{
+		BC_PROFILE_FUNC();
+
 		m_Info.Title  = prop.Title;
 		m_Info.Width  = prop.Width;
 		m_Info.Height = prop.Height;
@@ -146,6 +152,8 @@ namespace BackInfi
 
 	void WindowsWindow::ShutDown()
 	{
+		BC_PROFILE_FUNC();
+
 		glfwDestroyWindow(m_Window);
 		--s_GLFWWindowCount;
 
@@ -157,12 +165,16 @@ namespace BackInfi
 
 	void WindowsWindow::OnUpdate()
 	{
+		BC_PROFILE_FUNC();
+
 		glfwPollEvents();
 		m_Context->SwapBuffers();
 	}
 
 	void WindowsWindow::SetVSync(bool enabled)
 	{
+		BC_PROFILE_FUNC();
+
 		if (enabled)
 			glfwSwapInterval(1);
 		else
