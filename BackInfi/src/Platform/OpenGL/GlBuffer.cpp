@@ -11,6 +11,8 @@ namespace BackInfi
 	// ---------------------------------------------------------------
 	GlVertexBuffer::GlVertexBuffer(uint32_t size)
 	{
+		BC_PROFILE_FUNC();
+
 		glGenBuffers(1, &m_RendererID);
 		glBindBuffer(GL_ARRAY_BUFFER, m_RendererID);
 		glBufferData(
@@ -23,6 +25,8 @@ namespace BackInfi
 
 	GlVertexBuffer::GlVertexBuffer(float* vertices, uint32_t size)
 	{
+		BC_PROFILE_FUNC();
+
 		glGenBuffers(1, &m_RendererID);
 		glBindBuffer(GL_ARRAY_BUFFER, m_RendererID);
 		glBufferData(
@@ -35,21 +39,29 @@ namespace BackInfi
 
 	GlVertexBuffer::~GlVertexBuffer()
 	{
+		BC_PROFILE_FUNC();
+
 		glDeleteBuffers(1, &m_RendererID);
 	}
 
 	void GlVertexBuffer::Bind() const
 	{
+		BC_PROFILE_FUNC();
+
 		glBindBuffer(GL_ARRAY_BUFFER, m_RendererID);
 	}
 
 	void GlVertexBuffer::UnBind() const
 	{
+		BC_PROFILE_FUNC();
+
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 	}
 
 	void GlVertexBuffer::SetData(const void* data, uint32_t size)
 	{
+		BC_PROFILE_FUNC();
+
 		glBindBuffer(GL_ARRAY_BUFFER, m_RendererID);
 		glBufferSubData(
 			GL_ARRAY_BUFFER,           // The target buffer type
@@ -63,6 +75,8 @@ namespace BackInfi
 	// ---------------------------------------------------------------
 	GlIndexBuffer::GlIndexBuffer(uint32_t* indices, uint32_t count)
 	{
+		BC_PROFILE_FUNC();
+
 		m_Count = count;
 		glGenBuffers(1, &m_RendererID);
 
@@ -79,16 +93,22 @@ namespace BackInfi
 
 	GlIndexBuffer::~GlIndexBuffer()
 	{
+		BC_PROFILE_FUNC();
+
 		glDeleteBuffers(1, &m_RendererID);
 	}
 
 	void GlIndexBuffer::Bind() const
 	{
+		BC_PROFILE_FUNC();
+
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_RendererID);
 	}
 
 	void GlIndexBuffer::UnBind() const
 	{
+		BC_PROFILE_FUNC();
+
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 	}
 
