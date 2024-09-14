@@ -34,28 +34,37 @@ namespace BackInfi
 
 	GlVertexArray::GlVertexArray()
 	{
-		//glCreateVertexArrays(1, &m_RendererID);
+		BC_PROFILE_FUNC();
+
 		glGenVertexArrays(1, &m_RendererID);
 		glBindVertexArray(m_RendererID);
 	}
 
 	GlVertexArray::~GlVertexArray()
 	{
+		BC_PROFILE_FUNC();
+
 		glDeleteVertexArrays(1, &m_RendererID);
 	}
 
 	void GlVertexArray::Bind() const
 	{
+		BC_PROFILE_FUNC();
+
 		glBindVertexArray(m_RendererID);
 	}
 
 	void GlVertexArray::UnBind() const
 	{
+		BC_PROFILE_FUNC();
+
 		glBindVertexArray(0);
 	}
 
 	void GlVertexArray::AddVertexBuffer(const std::shared_ptr<VertexBuffer>& vertexBuffer)
 	{
+		BC_PROFILE_FUNC();
+
 		BC_CORE_ASSERT(vertexBuffer->GetLayout().GetElements().size(), "Vertex Buffer has no layout!");
 
 		glBindVertexArray(m_RendererID);
@@ -69,8 +78,7 @@ namespace BackInfi
 			case ShaderDataType::Float:
 			case ShaderDataType::Float2:
 			case ShaderDataType::Float3:
-			case ShaderDataType::Float4:
-			{
+			case ShaderDataType::Float4: {
 				glEnableVertexAttribArray(m_VertexBufferIndex);
 				glVertexAttribPointer(
 					m_VertexBufferIndex,                                            // Attribute 0 -- The layout position in the shader
@@ -87,8 +95,7 @@ namespace BackInfi
 			case ShaderDataType::Int2:
 			case ShaderDataType::Int3:
 			case ShaderDataType::Int4:
-			case ShaderDataType::Bool:
-			{
+			case ShaderDataType::Bool: {
 				glEnableVertexAttribArray(m_VertexBufferIndex);
 				glVertexAttribIPointer(
 					m_VertexBufferIndex,                                            // Attribute 0 -- The layout position in the shader  
@@ -101,8 +108,7 @@ namespace BackInfi
 				break;
 			}
 			case ShaderDataType::Mat3:
-			case ShaderDataType::Mat4:
-			{
+			case ShaderDataType::Mat4: {
 				uint8_t count = element.GetComponentCount();
 				for (uint8_t i = 0; i < count; i++)
 				{
@@ -130,6 +136,8 @@ namespace BackInfi
 
 	void GlVertexArray::SetIndexBuffer(const std::shared_ptr<IndexBuffer>& indexBuffer)
 	{
+		BC_PROFILE_FUNC();
+
 		glBindVertexArray(m_RendererID);
 		indexBuffer->Bind();
 
