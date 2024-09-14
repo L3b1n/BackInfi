@@ -25,6 +25,8 @@ namespace BackInfi
 	// ------------------------------------------------------------------------
 	void Renderer::Init()
 	{
+		BC_PROFILE_FUNC();
+
 		RenderCommand::Init();
 	}
 
