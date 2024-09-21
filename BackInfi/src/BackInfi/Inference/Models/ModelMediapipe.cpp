@@ -13,6 +13,8 @@ namespace BackInfi
 			cv::Mat* small_mask_mat,
 			Model::Activation activation = Model::Activation::SOFTMAX)
 		{
+			BC_PROFILE_FUNC();
+			
 			// Configure activation function.
 			const int output_layer_index = 0;
 			const auto activation_fn = [&](const cv::Vec2f& mask_value) {
@@ -73,6 +75,8 @@ namespace BackInfi
 		const std::vector<std::vector<int64_t>>& outputDims,
 		std::vector<std::vector<float>>& outputTensorValues)
 	{
+		BC_PROFILE_FUNC();
+
 		if (activation == Activation::NONE)
 		{
 			// Basic activation
@@ -113,6 +117,8 @@ namespace BackInfi
 
 	void ModelMediapipe::PostprocessOutput(cv::Mat& outputImage)
 	{
+		BC_PROFILE_FUNC();
+
 		// Take 2nd channel
 		std::vector<cv::Mat> outputImageSplit;
 		cv::split(outputImage, outputImageSplit);
