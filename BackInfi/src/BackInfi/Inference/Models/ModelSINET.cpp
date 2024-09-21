@@ -16,6 +16,8 @@ namespace BackInfi
 		cv::Mat& resizedImage,
 		cv::Mat& preprocessedImage)
 	{
+		BC_PROFILE_FUNC();
+		
 		cv::subtract(
 			resizedImage, 
 			cv::Scalar(102.890434, 111.25247, 126.91212),
