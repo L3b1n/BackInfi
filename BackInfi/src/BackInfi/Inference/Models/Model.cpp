@@ -16,6 +16,8 @@ namespace BackInfi
 		std::vector<Ort::AllocatedStringPtr>& inputNames,
 		std::vector<Ort::AllocatedStringPtr>& outputNames)
 	{
+		BC_PROFILE_FUNC();
+
 		Ort::AllocatorWithDefaultOptions allocator;
 
 		inputNames.clear();
@@ -29,6 +31,7 @@ namespace BackInfi
 		std::vector<std::vector<int64_t>>& inputDims,
 		std::vector<std::vector<int64_t>>& outputDims)
 	{
+		BC_PROFILE_FUNC();
 		// Assuming model only has one input and one output image
 
 		inputDims.clear();
@@ -79,6 +82,8 @@ namespace BackInfi
 		std::vector<Ort::Value>& inputTensor,
 		std::vector<Ort::Value>& outputTensor)
 	{
+		BC_PROFILE_FUNC();
+
 		// Assuming model only has one input and one output images
 		outputTensorValues.clear();
 		outputTensor.clear();
@@ -134,6 +139,8 @@ namespace BackInfi
 		const std::vector<std::vector<int64_t>>& inputDims,
 		cv::Size& size)
 	{
+		BC_PROFILE_FUNC();
+
 		// BHWC
 		size.width  = (int)inputDims[0][2];
 		size.height = (int)inputDims[0][1];
@@ -143,6 +150,8 @@ namespace BackInfi
 		cv::Mat& resizedImage,
 		cv::Mat& preprocessedImage)
 	{
+		BC_PROFILE_FUNC();
+
 		preprocessedImage = resizedImage / 255.0;
 	}
 
@@ -155,6 +164,8 @@ namespace BackInfi
 		cv::Size inputSize,
 		std::vector<std::vector<float>>& inputTensorValues)
 	{
+		BC_PROFILE_FUNC();
+
 		preprocessedImage.copyTo(
 			cv::Mat(
 				inputSize,
@@ -169,6 +180,8 @@ namespace BackInfi
 		const std::vector<std::vector<int64_t>>& outputDims,
 		std::vector<std::vector<float>>& outputTensorValues)
 	{
+		BC_PROFILE_FUNC();
+
 		// BHWC
 		uint32_t outputWidth = (int)outputDims[0].at(2);
 		uint32_t outputHeight = (int)outputDims[0].at(1);
@@ -192,6 +205,8 @@ namespace BackInfi
 		const std::vector<Ort::Value>& inputTensor,
 		std::vector<Ort::Value>& outputTensor)
 	{
+		BC_PROFILE_FUNC();
+
 		if (inputNames.size() == 0 || outputNames.size() == 0 ||
 			inputTensor.size() == 0 || outputTensor.size() == 0)
 		{
@@ -232,12 +247,16 @@ namespace BackInfi
 		cv::Mat& resizedImage,
 		cv::Mat& preprocessedImage)
 	{
+		BC_PROFILE_FUNC();
+
 		resizedImage = resizedImage / 255.0;
 		Utils::HwcToChw(resizedImage, preprocessedImage);
 	}
 
 	void ModelBCHW::PostprocessOutput(cv::Mat& output)
 	{
+		BC_PROFILE_FUNC();
+
 		cv::Mat outputTransposed;
 		Utils::ChwToHwc32f(output, outputTransposed);
 		outputTransposed.copyTo(output);
@@ -247,6 +266,8 @@ namespace BackInfi
 		const std::vector<std::vector<int64_t>>& inputDims,
 		cv::Size& size)
 	{
+		BC_PROFILE_FUNC();
+
 		// BCHW
 		size.width  = (int)inputDims[0][3];
 		size.height = (int)inputDims[0][2];
@@ -257,6 +278,8 @@ namespace BackInfi
 		const std::vector<std::vector<int64_t>>& outputDims,
 		std::vector<std::vector<float>>& outputTensorValues)
 	{
+		BC_PROFILE_FUNC();
+
 		// BCHW
 		uint32_t outputWidth = (int)outputDims[0].at(3);
 		uint32_t outputHeight = (int)outputDims[0].at(2);
@@ -270,6 +293,8 @@ namespace BackInfi
 		cv::Size,
 		std::vector<std::vector<float>>& inputTensorValues)
 	{
+		BC_PROFILE_FUNC();
+		
 		inputTensorValues[0].assign(
 			preprocessedImage.begin<float>(),
 			preprocessedImage.end<float>()
