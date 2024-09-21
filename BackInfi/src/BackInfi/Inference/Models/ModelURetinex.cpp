@@ -18,6 +18,8 @@ namespace BackInfi
 		std::vector<Ort::AllocatedStringPtr>& inputNames,
 		std::vector<Ort::AllocatedStringPtr>& outputNames)
 	{
+		BC_PROFILE_FUNC();
+
 		Ort::AllocatorWithDefaultOptions allocator;
 
 		inputNames.clear();
@@ -38,6 +40,8 @@ namespace BackInfi
 		std::vector<std::vector<int64_t>>& inputDims,
 		std::vector<std::vector<int64_t>>& outputDims)
 	{
+		BC_PROFILE_FUNC();
+
 		// Assuming model only has one input and one output image
 		inputDims.clear();
 		outputDims.clear();
@@ -66,6 +70,8 @@ namespace BackInfi
 		cv::Size,
 		std::vector<std::vector<float>>& inputTensorValues)
 	{
+		BC_PROFILE_FUNC();
+		
 		inputTensorValues[0].assign(
 			preprocessedImage.begin<float>(),
 			preprocessedImage.end<float>()
