@@ -23,6 +23,8 @@ namespace BackInfi
 		const std::vector<std::vector<int64_t>>& outputDims,
 		std::vector<std::vector<float>>& outputTensorValues)
 	{
+		BC_PROFILE_FUNC();
+		
 		// BHWC
 		uint32_t outputWidth = (int)outputDims[0].at(1);
 		uint32_t outputHeight = (int)outputDims[0].at(0);
