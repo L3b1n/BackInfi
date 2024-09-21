@@ -15,6 +15,8 @@ namespace BackInfi
 
 	void ModelSelfie::PostprocessOutput(cv::Mat& outputImage)
 	{
+		BC_PROFILE_FUNC();
+		
 		cv::normalize(outputImage, outputImage, 1.0, 0.0, cv::NORM_MINMAX);
 	}
 
