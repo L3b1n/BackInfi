@@ -14,6 +14,8 @@ namespace BackInfi
 
 	void ModelTBEFN::PostprocessOutput(cv::Mat& output)
 	{
+		BC_PROFILE_FUNC();
+
 		// output is already BHWC ...
 		output = output * 255.0; // Convert to 0-255 range
 	}
@@ -23,6 +25,8 @@ namespace BackInfi
 		const std::vector<std::vector<int64_t>>& outputDims,
 		std::vector<std::vector<float>>& outputTensorValues)
 	{
+		BC_PROFILE_FUNC();
+		
 		// BHWC
 		uint32_t outputWidth = (int)outputDims[0].at(2);
 		uint32_t outputHeight = (int)outputDims[0].at(1);
