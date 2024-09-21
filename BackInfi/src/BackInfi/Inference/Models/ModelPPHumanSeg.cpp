@@ -16,6 +16,8 @@ namespace BackInfi
 		cv::Mat& resizedImage,
 		cv::Mat& preprocessedImage)
 	{
+		BC_PROFILE_FUNC();
+
 		resizedImage = (resizedImage / 256.0 - cv::Scalar(0.5, 0.5, 0.5))
 			/ cv::Scalar(0.5, 0.5, 0.5);
 
@@ -27,6 +29,8 @@ namespace BackInfi
 		const std::vector<std::vector<int64_t>>& outputDims,
 		std::vector<std::vector<float>>& outputTensorValues)
 	{
+		BC_PROFILE_FUNC();
+
 		uint32_t outputWidth = (int)outputDims[0].at(2);
 		uint32_t outputHeight = (int)outputDims[0].at(1);
 		int32_t outputChannels = CV_32FC2;
@@ -36,6 +40,8 @@ namespace BackInfi
 
     void ModelPPHumanSeg::PostprocessOutput(cv::Mat& outputImage)
 	{
+		BC_PROFILE_FUNC();
+		
 		// take 1st channel
 		std::vector<cv::Mat> outputImageSplit;
 		cv::split(outputImage, outputImageSplit);
