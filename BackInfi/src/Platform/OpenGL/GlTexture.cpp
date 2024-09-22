@@ -64,11 +64,14 @@ namespace BackInfi
 
 	GlTexture::GlTexture(const std::string& filepath)
 	{
-		
+		BC_PROFILE_FUNC();
+
 	}
 
 	GlTexture::GlTexture(const TextureSpecification& spec)
 	{
+		BC_PROFILE_FUNC();
+
 		m_Specs  = spec;
 		m_Width  = m_Specs.Width;
 		m_Height = m_Specs.Height;
@@ -102,6 +105,8 @@ namespace BackInfi
 
 	GlTexture::~GlTexture()
 	{
+		BC_PROFILE_FUNC();
+
 		if (m_RendererID)
 		{
 			glDeleteTextures(1, &m_RendererID);
@@ -111,6 +116,8 @@ namespace BackInfi
 
 	void GlTexture::LoadTexture(BYTE* data, uint32_t size) const
 	{
+		BC_PROFILE_FUNC();
+
 		uint32_t bbp = Utils::GetStep(m_DataFormat);
 		BC_CORE_ASSERT(size == m_Width * m_Height * bbp, "Data must be entire texture!");
 		glBindTexture(GL_TEXTURE_2D, m_RendererID);
@@ -133,12 +140,16 @@ namespace BackInfi
 
 	void GlTexture::Bind(uint32_t slot) const
 	{
+		BC_PROFILE_FUNC();
+
 		glActiveTexture(GL_TEXTURE0 + slot);
 		glBindTexture(GL_TEXTURE_2D, m_RendererID);
 	}
 
 	void GlTexture::UnBind(uint32_t slot) const
 	{
+		BC_PROFILE_FUNC();
+
 		glActiveTexture(GL_TEXTURE0 + slot);
 		glBindTexture(GL_TEXTURE_2D, 0);
 	}
