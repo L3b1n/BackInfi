@@ -97,6 +97,9 @@ private:
 	cv::Mat                                m_PreviousMask;
 	cv::Mat                                m_BackgroundMask;
 
+	glm::vec2                              m_ViewportSize = { 0.0f, 0.0f };
+	glm::vec2                              m_ViewportBounds[2];
+
 	BackInfi::InferenceSettings            m_Settings;
 
 	cv::VideoCapture                       m_Cap;
